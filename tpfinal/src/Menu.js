@@ -5,7 +5,7 @@
 function Menu() {
   return ( <>
     <body>
-     <div id='cssmenu'>
+     <div id='menu'>
      <ul>
      <li><a href='index.php'><span>Snake</span></a></li>
      <li><a href='#'><span>Sopa de Letras</span></a></li>
