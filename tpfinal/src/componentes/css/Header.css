@@ -1,0 +1,30 @@
+body{
+    background-image: url('../Imagenes/Fondo.jpg');
+}
+
+header{
+    background: rgba(84,84,84); 
+    margin: -10px -20px;
+}
+.empresa{
+    font-family: LEMON MILK-Bold;
+    font-size: 50px;
+    color: rgb(198,205,219);
+}
+
+.imagen{
+    margin: 30px 10px 10px 30px;
+    width: 245px;
+    height: 187px;
+}
+
+.logo{
+    display: flex;
+}
+
+@font-face{
+    font-family: LEMON MILK-Bold;
+    src: url('../fuentes/LEMONMILK-Bold.ttf')
+}
+
+

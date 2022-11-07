@@ -1,9 +1,9 @@
-import Desarrollador from "./Desarrollador";
+import Header from "./componentes/Header";
 
 function App() {
   return (
     <div>
-      <Desarrollador></Desarrollador>
+      <Header/>
     </div>
   );
 }
