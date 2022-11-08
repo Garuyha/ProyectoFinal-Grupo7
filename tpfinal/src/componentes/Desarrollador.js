@@ -1,7 +1,7 @@
 
 import React, {Fragment} from "react";
 import desarrolladores from './desarrolladores.json'
-import './componentes/Desarrollador.css'
+import './css/Desarrollador.css'
 
 
 function Desarrollador(){

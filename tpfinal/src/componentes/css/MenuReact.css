@@ -1,0 +1,43 @@
+.caja{
+    margin: 80px;
+    background: #fff;
+}
+.cajajuego{
+    display: flex;
+    padding: 30px;
+}
+
+.imagenjuego{
+    margin:  0px 80px 0px 0px;
+}
+
+.infojuego{
+    font-family: Roboto-Thin;
+}
+
+.sipnosis{
+    font-size: 22px;
+    line-height : 7px;
+}
+
+.titulojuego{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: LEMON MILK-Light;
+    font-size: 25px;
+}
+
+.imagenjuego{
+    width: 302px;
+    height: 302px;
+}
+
+@font-face{
+    font-family: LEMON MILK-Light;
+    src: url('../fuentes/LEMONMILK-Light.ttf');
+}
+
+@font-face{
+    font-family: Roboto-Thin;
+    src: url('../fuentes/Roboto-Thin.ttf');
+}
