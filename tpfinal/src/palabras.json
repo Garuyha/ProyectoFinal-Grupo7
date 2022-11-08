@@ -1,0 +1,114 @@
+{
+    "palabras":[
+    {
+        
+        "palabra":"diseño",
+   "letras":["d","i","s","e","ñ","o"],
+   "pista":"El Proceso de Concebir y Especificar en detalle como tiene que ser el funcionamiento de un Videojuego"
+
+    },
+    {
+     "palabra":"GDD",
+     "letras":["G","D","D"],
+     "pista":"documento (o un conjunto de documentos) que describe todos los detalles del diseño de un videojuego."
+        
+
+        },
+        { 
+            "palabra":"PEGI",
+            "letras":["P","E","G","I"],
+            "pista":"Sistema de clasificación de videojuegos por edad respaldado por la mayoría de los países de Europa"
+           
+
+            },
+            {
+                "palabra":"CERO",
+                "letras":["C","E","R","O"],
+                "pista":"Sistema de clasificacion de videojuegos por edad respaldado por japón"
+
+                },
+                {
+                  "palabra":"ESRB",
+                  "letras":["E","S","R","B"],
+                    "pista":"Sistema de clasificación de videojuegos por edad respaldado por EEUU, Canadá y algunos países de Lainoamerica"
+                   
+                    },{
+                        "palabra":"Game Engine",
+                        "letras":["G","A","M","E"," ","E","N","G","I","N","E"],
+                        "pista":" framework o conjunto de herramientas que ayudan a agilizar el proceso de desarrollo de un videojuego"
+                    },{
+                        "palabra":"Atari",
+                        "letras":["A","T","A","R","I"],
+                        "pista":"Empresa que lanzó en 1974 una consola doméstica para jugar pong"
+                    },{
+
+                        "palabra":"William Higginbotham",
+                        "letras":["W","I","L","L","I","A","M"," ","H","I","G","G","I","N","B","O","T","H","A","M"],
+                        "pista":"Creador de tennis para dos (Tennis for two)"
+                    },{
+                        "palabra":"Ralph Baer",
+                        "letras":["R","A","L","P","H"," ","B","A","E","R"],
+                        "pista":"Nombre del padre de los videojuegos"
+                    },{
+                        "palabra":"Family Computer",
+                        "letras":["F","A","M","I","L","Y","","C","O","M","P","U","T","E","R"],
+                        "pista":"Consola lanzada por Nintendo que revivió la industria de los videojuegos en 1983"
+                    },{
+                        "palabra":"PAC-MAN",
+                        "letras":["P","A","C","","M","A","N"],
+                        "pista": "Juego famoso lanzado por Namco en 1980"
+                    },{
+                        "palabra":"Playstation",
+                        "letras":["P","L","A","Y","S","T","A","T","I","O","N"],
+                        "pista":"Primera consola lanzada con soporte para CD, lanzada por Sony"
+                    },{
+                        "palabra":"Indie",
+                        "letras":["I","N","D","I","E"],
+                        "pista":"Nombre que se le da a los juegos desarrollados por individuos o equipos pequeños, habitualmente con poco o ningún presupuesto"
+                    },{
+                        "palabra":"Game Jam",
+                        "letras":["G","A","M","E","","J","A","M"],
+                        "pista":"encuentro de desarrolladores que tiene como propósito la creación de uno o más videojuegos en un corto período de tiempo"
+                    },{
+                        "palabra":"Aventura",
+                        "letras":["A","V","E","N","T","U","R","A","S"],
+                        "pista":"genero de juegos en los que se deben realizar diversas acciones a medida que se desarrolla el discurso narrativo hasta alcanzar un objetivo final"
+                    },{
+                        "palabra":"Plataformas",
+                        "letras":["P","L","A","A","F","O","R","M","A","S"],
+                        "pista":"aquellos juegos en los que el escenario estádividido en varios desniveles y donde el jugador puede, básicamente, correr,saltar y disparar. Son juegos que requieren de muchos reflejos y destreza porparte del jugador."
+                    },{
+                        "palabra":"Aventura Gráfica",
+                        "letras":["A","V","E","N","T","U","R","A","","G","R","A","F","I","C","A"],
+                        "pista":"juegos donde el desarrollo de la acción es más pausado, guiado o incluso nulo. La interacción con el personaje se realiza a través de menús de acciones como: abrir, cerrar, hablar o ir a algún lugar"
+                    },{
+                        "palabra":"Survival Horror",
+                        "letras":["S","U","R","V","I","A","L","","H","O","R","R","O","R"],
+                        "pista":"Genero de juegos que incluyen tramas de terror y generan miedo en el jugador usando músican efectos sonóros o efectos visuales."
+                    },{
+                        "palabra":"Shooter",
+                        "letras":["S","H","O","O","T","E","R"],
+                        "pista":"juegos donde el jugador básicamente sólo puede moverse y disparar para cumplir su objetivo."
+                    },{
+                        "palabra":"Lucha",
+                        "letras":["L","U","C","H","A"],
+                        "pista":"videojuegos donde se realiza una simulación de una lucha cuerpo a cuerpo. El combate se efectúa mayoritariamente mediante el uso de técnicas especiales, que se activan mediante combinaciones de botones con el mando de dirección"
+                    },{
+                        "palabra":"Neo-Geo",
+                        "letras":["N","E","O","","G","E","O"],
+                        "pista":"sistema desarrollado por SNK en 1990 para videoconsolas y maquinas arcade"
+                    },{
+                        "palabra":"RPG",
+                        "letras":["R","P","G"],
+                        "pista":"Juegos que recrean un espacio donde el jugador desarrolla un personaje según un determinado rol, con una serie de características parametrizables como la fuerza, la destreza, la inteligencia, etc..."
+                    },{
+                        "palabra":"Dungeons and Dragons",
+                        "letras":["D","U","N","G","E","O","N","S","","A","N","D","","D","R","A","G","O","N","S"],
+                        "pista":"Juego de rol publicado en 1974, diseñado por Gary Gygax y Dave Arneson, en el que se basan los juegos RPG"
+                    },{
+                        "palabra":"AMONGUS",
+                        "letras":["A","M","O","N","G","U","S"],
+                        "pista":"ඞ"
+                    }
+    ]
+    }
