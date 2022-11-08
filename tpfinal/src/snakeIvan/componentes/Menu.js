@@ -14,28 +14,19 @@ export class Menu extends Phaser.Scene{
       preload(){
         this.load.image('fondo','./imagenes/fondo.jpg');
         this.load.image('logo','./imagenes/logo.png');                            // Se precarga las imagenes y los botones.
-        this.load.image('logov','./imagenes/snakelogo.png');     
-        this.load.image('logob','./imagenes/logob.png'); 
-      
+        this.load.image('jugar','./imagenes/jugarBoton.png');
       }
       
      
       create(){
         
         this.add.image(650,350,'fondo'); 
-         this.add.image(549,180,'logo');  
-         this.add.image(550,180,'logob');                     // Se crean las imagenes y los botones.
-         this.add.image(850,150,'logov');        
-         
+        this.add.image(650,250,'logo');  
+        this.add.image(650,450,'jugar'); 
          
       }
 
-      
-     update(){
-   
-     
-   }
-
+    
      
 
       

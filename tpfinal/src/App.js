@@ -3,7 +3,10 @@ import Phaser from 'phaser';
 import { useEffect, useState } from 'react';
 
 import './App.css';
-import { Menu } from './snakeIvan/componentes/Menu';
+
+import NivelUno from './snakeIvan/componentes/NivelUno';
+
+
 
 function App() {
 
@@ -15,7 +18,7 @@ const config= {
 type: Phaser.AUTO,
 width:1300,                                            // Ancho de la pantalla
 height:700,                                           // Altura de la pantalla
-scene:[Menu],     // Se guardan las escenas del juego.
+scene:[NivelUno],     // Se guardan las escenas del juego.
 physics: {                                          // se habilita las fisicas del juego.
 default: 'arcade',
 arcade: {                                          
