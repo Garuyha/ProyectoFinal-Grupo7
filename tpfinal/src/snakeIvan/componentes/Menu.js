@@ -24,6 +24,7 @@ export class Menu extends Phaser.Scene{
         this.add.image(650,250,'logo');  
         this.add.image(650,450,'jugar'); 
          
+        
       }
 
     
