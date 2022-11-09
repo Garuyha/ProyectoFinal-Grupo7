@@ -16,7 +16,7 @@ export class Inicio extends Phaser.Scene{
 
       preload(){
         this.load.image('inicio','./imgHenry/inicioPantalla.jpg');
-        this.BotonFacil.preload();                                   
+        this.BotonInicio.preload();                                   
         //this.BotonAvanzado.preload();                   
 
       }
@@ -24,7 +24,7 @@ export class Inicio extends Phaser.Scene{
       create(){
        
          this.add.image(665,374,'inicio');
-         this.BotonFacil.create(); 
+         this.BotonInicio.create(); 
          //this.BotonAvanzado.create();                          
          
       }

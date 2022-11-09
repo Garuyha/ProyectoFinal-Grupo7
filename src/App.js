@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import Phaser from 'phaser';
+import Game from './componenteHenry/GameHenry.js';
+import { useEffect, useState } from 'react';
 import './App.css';
-
+import { Inicio } from './componenteHenry/InicioHenry';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const[ listo,setListo  ]= useState(false);
+   
+useEffect( () =>{
+
+const config= {
+type: Phaser.AUTO,
+width:1300,                            
+height:750,                            
+scene:[Inicio,Game],     
+physics: {
+default: 'arcade',
+arcade: {                               
+debug: false
+
+}
+
+}
+
+};
+
+const game = new Phaser.Game(config);
+game.events.on("LISTO", setListo)
+
+return() =>{
+
+setListo(false);
+game.destroy(true);
+
+}
+}, [listo]);
+
 }
 
 export default App;
