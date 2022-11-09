@@ -7,6 +7,8 @@ import papelJugador from "./img/papelJugador.png";
 import papelMaquna from "./img/papelMaquina.png";
 import piedraJugador from "./img/piedraJugador.png";
 import piedraMaquina from "./img/piedraMaquina.png"
+import './css/Juego.css'
+
 
 export function Juego(){
     const[eleccionJugador,setEleccionJugador] = useState({});
@@ -45,7 +47,7 @@ export function Juego(){
     }
 
     return(
-        <div className = "Contenedor">            
+        <div className = "contenedorppt">            
             <h2 className = "resultado">
                 <Resultado jugador={eleccionJugador} maquina={eleccionMaquina}/>                             
             </h2>            
@@ -71,3 +73,5 @@ export function Juego(){
         </div>
     );
 }
+
+export default Juego;
