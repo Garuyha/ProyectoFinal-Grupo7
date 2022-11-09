@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './componentes/Header'
+import { Routes, Route } from "react-router-dom";
+import Inicio from './componentes/Inicio';
+import Prueba from './componentes/Prueba';
+import Desarrollador from './componentes/Desarrollador'
+import Juego from './componentes/juegos/PiedraPapelTijera/Juego'
+import Hangman from './componentes/juegos/Hangman/Hangman'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path='/menureact' element={<Prueba/>}/>
+        <Route path='/desarrollador' element={<Desarrollador />}/>
+        <Route path= '/juegoppt' element={<Juego/>}/>
+        <Route path= '/juegoahorcadito' element={<Hangman/>}/>
+      </Routes>
     </div>
   );
 }
