@@ -1,16 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
-import { ReactDOM } from 'react';
-import { render } from 'react-dom';
+import CartaIndividual from './CartaIndividual';
 
 //array de las imagenes de las cartas, recordar pasar a un json
 const cartaImagen = [
     //"src": "ruta a una imagen especifica"
+    {"src" : "/img/helmet-1.png"},
+    {"src" : "/img/potion-1.png"},
+    {"src" : "/img/ring-1.png"},
+    {"src" : "/img/scroll-1.png"},
+    {"src" : "/img/shield-1.png"},
+    {"src" : "/img/sword-1.png"}
 ]
 
 function MemoryGame(){
 
-const[carta, fijarCartas] =useState([]) //valor inicial es un array vacío
+const[cartas, fijarCartas] =useState([]) //valor inicial es un array vacío
 const[turnos,fijarTurnos] =useState(0)//turnos que tomará al usuario para terminar el juego 
 
 //función para duplicar cada carta
@@ -33,7 +38,7 @@ const barajarCartas = () =>{
 
 console.log(cartas,turnos)
 
-    render(
+    return(
 
         <div className="MemoryGame">
             <h1>MemoryGame</h1>
@@ -43,14 +48,7 @@ console.log(cartas,turnos)
 {/* renderiza todas las cartas y usa como clave el id random añadido en barajar carta */}
         <div className="grillaCartas">
             {cartas.map(carta =>(
-                <div className="carta" key={carta.id}>
-
-                    <div>
-                        <img className="frenteCarta" src={carta.src} alt="frente"></img>
-                        <image className="dorsoCarta" src="ruta de la imagen del dorso de la carta" alt="dorso"/>
-                    </div>
-
-                </div>
+                < CartaIndividual key={carta.id} carta={carta}/>
             ))}
         </div>
 

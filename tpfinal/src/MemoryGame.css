@@ -29,3 +29,14 @@ body{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
+
+.carta{
+    position: relative;
+}
+
+.carta img{
+    width: 100%;
+    display: block;
+    border: solid whitesmoke;
+    border-radius: 6px;
+}

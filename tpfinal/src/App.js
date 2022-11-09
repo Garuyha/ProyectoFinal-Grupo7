@@ -1,6 +1,6 @@
 
 import './App.css';
-import WordGame from './MemoryGame.js'
+import MemoryGame from './MemoryGame.js'
 
 function App() {
   return (
