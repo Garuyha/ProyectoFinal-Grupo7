@@ -1,9 +1,25 @@
 import Phaser from "phaser";
-
-var Game = {
-   
-    preload: function(){
-        game.load.image('snake', '.stritesEzequiel/cuerpo.png');
-        game.load.image('apple', '.stritesEzequiel/manzana.png');
+var config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
     }
+};
+
+var game = new Phaser.Game(config);
+
+function preload ()
+{
+}
+
+function create ()
+{
+}
+
+function update ()
+{
 }
