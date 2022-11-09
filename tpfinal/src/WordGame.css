@@ -1,0 +1,31 @@
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #333;
+	padding: 10px;
+}
+
+#game {
+	margin-bottom: 100px;
+}
+
+.puzzle {
+	border: 2px solid black;
+}
+
+.cell {
+	border: 1px solid black;
+	width: 35px;
+	height: 35px;
+}
+
+input {
+	width: 30px;
+	text-align: center;
+	border: none;
+}
+input:hover {
+	background-color: aqua;
+}
