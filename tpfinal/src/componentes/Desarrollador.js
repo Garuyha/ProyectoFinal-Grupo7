@@ -1,6 +1,6 @@
 
 import React, {Fragment} from "react";
-import desarrolladores from './desarrolladores.json'
+import desarrolladores from './json/desarrolladores.json'
 import './css/Desarrollador.css'
 
 

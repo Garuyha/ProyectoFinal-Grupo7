@@ -18,9 +18,9 @@ function MenuReact(){
                             PIEDRA, PAPEL O TIJERA
                         </h1>
                     <div className='sipnosis'>
-                        <p>Elige entre las opciones para poder ganarle a la maquina.</p>
-                        <p>Como dice el nombre tienes opciones para ganar.</p>
-                        <p>¡Entra y vence la maquina!</p>
+                        <p className='t'>Elige entre las opciones para poder ganarle a la maquina.</p>
+                        <p className='t'>Como dice el nombre tienes opciones para ganar.</p>
+                        <p className='t'>¡Entra y vence la maquina!</p>
                     </div>
                         <Link to='/juegoppt'>
                             <h3 className='botonjugar'>

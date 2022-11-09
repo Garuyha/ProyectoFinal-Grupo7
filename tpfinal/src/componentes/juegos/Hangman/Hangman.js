@@ -1,15 +1,13 @@
 import React from 'react';
+import step0 from "./imagenes/0.png";
+import step1 from "./imagenes/1.png";
+import step2 from "./imagenes/2.png";
+import step3 from "./imagenes/3.png";
+import step4 from "./imagenes/4.png";
+import step5 from "./imagenes/5.png";
+import step6 from "./imagenes/6.png";
+import {randomWord} from "./Word"
 
-import step0 from "./asset/imagenes/0.png";
-import step1 from "./asset/imagenes/1.png";
-import step2 from "./asset/imagenes/2.png";
-import step3 from "./asset/imagenes/3.png";
-import step4 from "./asset/imagenes/4.png";
-import step5 from "./asset/imagenes/5.png";
-import step6 from "./asset/imagenes/6.png";
-import {randomWord} from "./componentes/Word"
-import BtnH from './componentes/BtnH';
-import './componentes/css/Hangman.css'
 
 
 
@@ -44,7 +42,7 @@ class Hangman extends React.Component{
   generateButtons() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map(letter => (
       <button
-        className='btn btn-lg btn-primary m-2'
+        className='botonHangman'
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -94,9 +92,8 @@ class Hangman extends React.Component{
           </section>
           <p>{gameStat}</p>
 
-          <button className='btn' onClick={this.resetButton}>Reset</button>
+          <button className='botonhangman' onClick={this.resetButton}>Reset</button>
           </section> 
-          <BtnH/>
     </div>
   
     }

@@ -17,7 +17,11 @@
 
 .sipnosis{
     font-size: 22px;
-    line-height : 7px;
+    line-height : 25px;
+}
+
+.t{
+    margin: 8px 0px;
 }
 
 .titulojuego{
@@ -37,9 +41,6 @@
     font-family: Roboto-Black;
     font-size: 25px;
     padding: 10px 10px;
-    color: #000;
-    border: none;
-    background-color: none;
 }
 
 .botonjugar:hover{
