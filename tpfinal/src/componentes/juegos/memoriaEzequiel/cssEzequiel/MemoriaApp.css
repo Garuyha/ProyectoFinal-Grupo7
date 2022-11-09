@@ -1,0 +1,25 @@
+.App{
+    max-width: 860px;
+    margin: 40px auto;
+}
+    button{
+        background: nome;
+        border: 2px solid rgb(255, 0, 0);
+        padding: 6px 12px;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    button:hover{
+        background: #ff00dd;
+        color: #fff;
+    }
+
+.grilla-cartas{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
