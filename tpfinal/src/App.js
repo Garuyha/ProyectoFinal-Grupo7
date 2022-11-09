@@ -1,12 +1,12 @@
 
 import './App.css';
-import WordGame from './WordGame.js'
+import WordGame from './MemoryGame.js'
 
 function App() {
   return (
     <div className="App">
 
- <WordGame/>
+ <MemoryGame/>
 
     
     </div>

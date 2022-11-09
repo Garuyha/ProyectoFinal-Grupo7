@@ -1,0 +1,31 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    font-size: medium;
+    text-align: center;
+    background: black;
+    color: aliceblue;
+}
+
+.memoryButton{
+    background: none;
+    border: 2px whitesmoke;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.memoryButton:hover{
+    background: teal;
+    color: aliceblue;
+}
+
+.grillaCartas{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
