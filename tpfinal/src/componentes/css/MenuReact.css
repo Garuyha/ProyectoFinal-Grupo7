@@ -1,0 +1,63 @@
+.caja{
+    margin: 80px;
+    background: #fff;
+}
+.cajajuego{
+    display: flex;
+    padding: 30px;
+}
+
+.imagenjuego{
+    margin:  0px 80px 0px 0px;
+}
+
+.infojuego{
+    font-family: Roboto-Thin;
+}
+
+.sipnosis{
+    font-size: 22px;
+    line-height : 25px;
+}
+
+.t{
+    margin: 8px 0px;
+}
+
+.titulojuego{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: LEMON MILK-Light;
+    font-size: 25px;
+}
+
+.imagenjuego{
+    width: 302px;
+    height: 302px;
+}
+
+.botonjugar{
+    margin-top: 40px;
+    font-family: Roboto-Black;
+    font-size: 25px;
+    padding: 10px 10px;
+}
+
+.botonjugar:hover{
+    background: rgb(220,220,220);
+}
+
+@font-face{
+    font-family: LEMON MILK-Light;
+    src: url('../fuentes/LEMONMILK-Light.ttf');
+}
+
+@font-face{
+    font-family: Roboto-Thin;
+    src: url('../fuentes/Roboto-Thin.ttf');
+}
+
+@font-face{
+    font-family: Roboto-Black;
+    src: url('../fuentes/Roboto-Black.ttf');
+}
