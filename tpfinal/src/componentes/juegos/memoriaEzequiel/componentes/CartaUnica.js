@@ -1,15 +1,17 @@
 import "../cssEzequiel/CartaUnica.css"
 
-export default function CartaUnica({carta, resolverEleccion}){
+export default function CartaUnica({carta, resolverEleccion, volteada, desabilitada}){
     
     const resolverClick = () => {
-        resolverEleccion(carta)
+        if(!desabilitada){
+            resolverEleccion(carta)
+        }
     }
     
     
     return(
         <div className = "carta">
-            <div>
+            <div className ={volteada ? "volteada" : "noVolteada"}>
                 <img className = "frente" src ={carta.src} alt = "frente carta"/>
                 
                 <img 
