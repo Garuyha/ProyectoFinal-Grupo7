@@ -16,11 +16,11 @@
         "linkto":"/juegoahorcadito"
     },
     {
-        "imagenportada":"./img/Ahorcado.png",
-        "nombrejuego":"AHORCADITO",
-        "parrafouno":"¡Salva a trollface de la muerte! Elige las letras correctas para evitar que nuestro amigo termine colgado.",
-        "parrafodos":"¿Podrás adivinarla antes de los seis intentos?",
-        "parrafotres":"¡Ayuda a Trollface a liberarse!",
+        "imagenportada":"./img/CartaMate.png",
+        "nombrejuego":"MEMORY CARD",
+        "parrafouno":"¿Que tan buena memoria tienes? ¡Entra y prueba!",
+        "parrafodos":"Tienes que darle click a las cartas y emparentarlas con su gemela",
+        "parrafotres":"¡Vamos!",
         "linkto":"/memoriaapp"
     }
     
