@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-//import App from './App';
-import MemoriaApp from './componentes/juegos/memoriaEzequiel/MemoriaApp.js';
+import App from './App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <MemoriaApp />
+        <App />
       </BrowserRouter>
     </React.StrictMode>
 );
