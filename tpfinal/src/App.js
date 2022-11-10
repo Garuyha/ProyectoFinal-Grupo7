@@ -1,11 +1,12 @@
 
 import Phaser from 'phaser';
 import { useEffect, useState } from 'react';
-
+import Preloader from './snakeIvan/componentes/Preloader';
 import './App.css';
 
-import NivelUno from './snakeIvan/componentes/NivelUno';
 
+import NivelDos from './snakeIvan/componentes/NivelDos';
+import NivelUno from './snakeIvan/componentes/NivelUno';
 
 
 function App() {
@@ -17,8 +18,11 @@ useEffect( () =>{
 const config= {
 type: Phaser.AUTO,
 width:1300,                                            // Ancho de la pantalla
-height:700,                                           // Altura de la pantalla
-scene:[NivelUno],     // Se guardan las escenas del juego.
+height:700, 
+scale: {
+    
+},                                          // Altura de la pantalla
+scene:[Preloader,NivelUno],  
 physics: {                                          // se habilita las fisicas del juego.
 default: 'arcade',
 arcade: {                                          
