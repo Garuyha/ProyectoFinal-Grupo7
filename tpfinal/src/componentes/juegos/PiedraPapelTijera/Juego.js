@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import Opcion from "./Opcion";
 import { Resultado } from "./Resultado";
 import tijeraJugador from "./img/tijerasJugador.png";
@@ -8,7 +8,6 @@ import papelMaquna from "./img/papelMaquina.png";
 import piedraJugador from "./img/piedraJugador.png";
 import piedraMaquina from "./img/piedraMaquina.png"
 import './css/Juego.css'
-
 
 export function Juego(){
     const[eleccionJugador,setEleccionJugador] = useState({});
@@ -47,30 +46,32 @@ export function Juego(){
     }
 
     return(
-        <div className = "contenedorppt">            
-            <h2 className = "resultado">
-                <Resultado jugador={eleccionJugador} maquina={eleccionMaquina}/>                             
-            </h2>            
-            <main className="tarjetaContenedor">
-                <section className="tarjetaJugador">
-                    <div className="jugador">Jugador</div>
-                    <div className="eleccionJugador">
-                        <img className="imagenSeleccion" src={eleccionJugador.imgJugador} alt={eleccionJugador.eleccion}/>
-                    </div>
-                    <div className = "opciones">
-                        {opciones.map((e,index)=><Opcion key={e=Math.random()} 
-                            elegir={elegirOpcion}
-                            valor = {opciones[index]}/>)}
-                    </div>
-                </section>
-                <section className = "tarjetaMaquina">
-                    <div className="maquina">Maquina</div>
-                    <div className="eleccionMaquina">
-                        <img className="imagenSeleccion" src={eleccionMaquina.imgMaquina} alt={eleccionMaquina.eleccion}/>                        
-                    </div>
-                </section>
-            </main>
-        </div>
+        <Fragment>
+            <div className = "contenedorppt">            
+                <h2 className = "resultado">
+                    <Resultado jugador={eleccionJugador} maquina={eleccionMaquina}/>                             
+                </h2>            
+                <main className="tarjetaContenedor">
+                    <section className="tarjetaJugador">
+                        <div className="jugador">Jugador</div>
+                        <div className="eleccionJugador">
+                            <img className="imagenSeleccion" src={eleccionJugador.imgJugador} alt={eleccionJugador.eleccion}/>
+                        </div>
+                        <div className = "opciones">
+                            {opciones.map((e,index)=><Opcion key={e=Math.random()} 
+                              elegir={elegirOpcion}
+                              valor = {opciones[index]}/>)}
+                        </div>
+                    </section>
+                    <section className = "tarjetaMaquina">
+                     <div className="maquina">Maquina</div>
+                       <div className="eleccionMaquina">
+                           <img className="imagenSeleccion" src={eleccionMaquina.imgMaquina} alt={eleccionMaquina.eleccion}/>                        
+                       </div>
+                    </section>
+                </main>
+            </div>
+        </Fragment>
     );
 }
 

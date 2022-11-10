@@ -14,5 +14,14 @@
         "parrafodos":"¿Podrás adivinarla antes de los seis intentos?",
         "parrafotres":"¡Ayuda a Trollface a liberarse!",
         "linkto":"/juegoahorcadito"
+    },
+    {
+        "imagenportada":"./img/Ahorcado.png",
+        "nombrejuego":"AHORCADITO",
+        "parrafouno":"¡Salva a trollface de la muerte! Elige las letras correctas para evitar que nuestro amigo termine colgado.",
+        "parrafodos":"¿Podrás adivinarla antes de los seis intentos?",
+        "parrafotres":"¡Ayuda a Trollface a liberarse!",
+        "linkto":"/memoriaapp"
     }
+    
 ]
