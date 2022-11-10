@@ -15,8 +15,10 @@ const cartaImagen = [
 
 function MemoryGame(){
 
-const[cartas, fijarCartas] =useState([]) //valor inicial es un array vacío
-const[turnos,fijarTurnos] =useState(0)//turnos que tomará al usuario para terminar el juego 
+const[cartas, setCartas] =useState([]) //valor inicial es un array vacío
+const[turnos, setTurnos] =useState(0)//turnos que tomará al usuario para terminar el juego 
+const[eleccionUno, setEleccionUno]=useState(null) //cuando el usuario clickee la primera carta, se actualizará
+const[eleccionDos, setEleccionDos]=useState(null) //lo mismo pero con la segunda carta
 
 //función para duplicar cada carta
 const barajarCartas = () =>{
@@ -30,25 +32,34 @@ const barajarCartas = () =>{
     .map((carta)=>({...carta, id:Math.random}))
 
     //actualizará el estado de las cartas
-    fijarCartas(cartasBarajadas)
+    setCartas(cartasBarajadas)
     //Iniciará los turnos en 0
-    fijarTurnos(0)
+    setTurnos(0)
 
 }
 
 console.log(cartas,turnos)
+
+const gestionarEleccion = (carta) => {
+console.log(carta)
+
+}
 
     return(
 
         <div className="MemoryGame">
             <h1>MemoryGame</h1>
             {/* cada vez que apretamos el boton jugar, llamamos a la funcioón barajar cartas */}
-            <button className='memoryButton'>Jugar uwu</button>
+            <button className='memoryButton' onClick={barajarCartas}>Jugar uwu</button>
 
 {/* renderiza todas las cartas y usa como clave el id random añadido en barajar carta */}
         <div className="grillaCartas">
             {cartas.map(carta =>(
-                < CartaIndividual key={carta.id} carta={carta}/>
+                < CartaIndividual 
+                key={carta.id} 
+                carta={carta}
+                gestionarEleccion={gestionarEleccion}
+                />
             ))}
         </div>
 

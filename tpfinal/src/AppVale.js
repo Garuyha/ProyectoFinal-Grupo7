@@ -1,8 +1,8 @@
 
-import './App.css';
+import './AppVale.css';
 import MemoryGame from './MemoryGame.js'
 
-function App() {
+function AppVale() {
   return (
     <div className="App">
 
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppVale;

@@ -1,7 +1,13 @@
 import React from 'react';
 import './MemoryGame.css';
 
-function CartaIndividual({carta}){
+function CartaIndividual({carta, gestionarEleccion}){
+
+const gestionarClick = () =>{
+
+    gestionarEleccion (carta)
+
+}
 
 return (
 
@@ -9,7 +15,7 @@ return (
 
 <div>
     <img className="frenteCarta" src={carta.src} alt="frente"></img>
-    <image className="dorsoCarta" src="/img/cover.png" alt="dorso"/>
+    <image className="dorsoCarta" src="/img/cover.png" onClick={gestionarClick} alt="dorso"/>
 </div>
 
 </div>
