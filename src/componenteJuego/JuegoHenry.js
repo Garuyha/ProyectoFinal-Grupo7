@@ -21,6 +21,7 @@ preload(){
     this.load.image('cortoCostado','./imgHenry/ParedCostadoCorto.png');
     this.load.image('cortoParado','./imgHenry/ParedParadoCorto.png');
     this.load.image('personaje','./imgHenry/pelota.png');
+    this.load.image('comida','./imgHenry/manzana.png');
     
     
     
@@ -52,9 +53,22 @@ create(){
     this.platforms.create(917,248,'cortoCostado');
     this.platforms.create(917,248,'cortoCostado');
     this.platforms.create(1300,248,'cortoCostado');
-    this.platforms.create(1278,510,'largoParado');
-   
-    
+    this.platforms.create(1278,501,'largoParado'); 
+    this.platforms.create(0,335,'largoCostado');//plataformas de la misma fila cordenada Y (335)
+    this.platforms.create(1095,335,'cortoCostado');
+    this.platforms.create(835,408,'cortoParado');
+    this.platforms.create(1000,430,'cortoCostado');
+    this.platforms.create(1045,430,'cortoCostado');
+    this.platforms.create(1000,440,'cortoCostado');
+    this.platforms.create(1045,440,'cortoCostado');
+    this.platforms.create(800,480,'largoCostado');
+    this.platforms.create(1190,501,'cortoParado');
+    this.platforms.create(800,570,'largoCostado');
+    this.platforms.create(1190,732,'cortoParado');
+    this.platforms.create(1100,732,'cortoParado');
+    this.platforms.create(755,678,'largoCostado');
+    this.platforms.create(755,660,'largoCostado');
+    this.platforms.create(305,600,'largoParado');
 
     
 
@@ -64,8 +78,23 @@ create(){
 
     
 
-      //rebote contra las plataformas
-    this.physics.add.collider(this.player, this.platforms);
+   //agregando las estrellas 
+    this.foods = this.physics.add.group({
+      key: 'comida',
+      repeat: 10,
+      setXY:{x: 180, y: 100, stepX: 120 }
+      });
+      this.foods.create(200,200,'comida');
+
+      //colision contra las plataformas
+    this.physics.add.collider(this.player, this.platforms);    
+
+    //choque de las estrellas con el jugador
+    this.physics.add.overlap(this.player, this.foods, this.collectStar, null, this);
+
+    //texto de puntaje
+    this.scoreText = this.add.text(13, 10, 'score: 0', { fontSize: '32px', fill: '#FF0606' });
+
  
 
 }
