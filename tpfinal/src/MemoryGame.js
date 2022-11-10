@@ -7,7 +7,7 @@ const cartaImagen = [
     //"src": "ruta a una imagen especifica"
     {"src" : "/img/Hierophant.png"},
     {"src" : "/img/HPriestess.png"},
-    {"src" : "/img/Lovers.png"},
+    {"src" : "/img/Lovers.jpg"},
     {"src" : "/img/Moon.png"},
     {"src" : "/img/Star.png"},
     {"src" : "/img/Sun.png"}

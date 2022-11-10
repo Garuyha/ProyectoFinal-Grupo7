@@ -12,6 +12,8 @@ body{
     color: aliceblue;
     padding: 100px;
     background-image: url("C:\Users\Vale\Desktop\Nueva carpeta\prog.web\Phaser Practica\Bomberman\TrabajoFinal-ReactPfiser-Grupo7\tpfinal\public\img\Night Sky 1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .memoryButton{
