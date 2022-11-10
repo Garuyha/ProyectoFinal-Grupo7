@@ -1,22 +1,30 @@
+/* esto importa la fuente toda aesthetic */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+/*esto es el cuerpo, le puse gris para diferenciar del container del juego */
 body{
     background-color: grey;
 }
 
+/*Este es el container del juego, tiene una imagen de fondo */
 .MemoryGame{
+    /* la fuente importada */
     font-family:'Montserrat', sans-serif;
     margin: 100;
     font-size: medium;
     text-align: center;
     color: aliceblue;
     padding: 100px;
+    /* recomiendo poner en el url la ruta de Night Sky 1, con copy path */
     background-image: url("C:\Users\Vale\Desktop\Nueva carpeta\prog.web\Phaser Practica\Bomberman\TrabajoFinal-ReactPfiser-Grupo7\tpfinal\public\img\Night Sky 1.svg");
+   /* para que el fondo no se repita */
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
 .memoryButton{
+    /* el boton que inicia y reinicia el juego */
     background: black;
     border: solid whitesmoke;
     padding: 6px 12px;
@@ -26,22 +34,27 @@ body{
     font-size: medium;
 }
 
+/*esto es la configuracion del boton cuando se pasa el mouse por encima*/
 .memoryButton:hover{
     background: rgb(93, 68, 130);
     color: whitesmoke;
 }
 
+/*la grilla de cartas*/
 .grillaCartas{
     margin-top: 40px;
     display: grid;
+    /*esta seteada para que muestre 6 columnas y no se tenga que bajar la pagina para jugar*/
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
 
+/*cada carta individual*/
 .carta{
     position: relative;
 }
 
+/*configuracion de las imagenes de las cartas*/
 .carta img{
     width: 100%;
     display: block;
