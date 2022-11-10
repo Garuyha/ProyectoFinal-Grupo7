@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartaUnica from './componentes/CartaUnica';
 import './cssEzequiel/MemoriaApp.css';
 
@@ -6,12 +6,12 @@ import './cssEzequiel/MemoriaApp.css';
  * porque son valores que nunca deben cambiar.
 */
 const cartasImagenes = [
-    {"src": "./assetsEzequiel/anillo.png"},
-    {"src": "./assetsEzequiel/casco.png"},
-    {"src": "./assetsEzequiel/espada.png"},
-    {"src": "./assetsEzequiel/escudo.png"},
-    {"src": "./assetsEzequiel/papiro.png"},
-    {"src": "./assetsEzequiel/posion.png"}
+    {"src": "./assetsEzequiel/anillo.png", elegida: false},
+    {"src": "./assetsEzequiel/casco.png", elegida: false},
+    {"src": "./assetsEzequiel/espada.png", elegida: false},
+    {"src": "./assetsEzequiel/escudo.png", elegida: false},
+    {"src": "./assetsEzequiel/papiro.png", elegida: false},
+    {"src": "./assetsEzequiel/posion.png", elegida: false}
 ]
 
 export default function App(){
@@ -20,6 +20,7 @@ export default function App(){
     const[turnos, setTurnos] = useState(0);
     const[eleccionUno, setEleccionUno] = useState(null); //La primera carta que elige el jugador
     const[eleccionDos, setEleccionDos] = useState(null); //La segunda carta que elige el jugador
+    const[desabilitada, setDesabilitada] = useState(false);
 
     /**Mezclar cartas
      * Esta funcion hace tres cosas principalmente:
@@ -44,6 +45,37 @@ export default function App(){
         eleccionUno ? setEleccionDos(carta) : setEleccionUno(carta)
     }
 
+    //Comparar la elección de dos cartas
+    useEffect(() => {
+        if(eleccionUno && eleccionDos){
+            setDesabilitada(true)
+            if(eleccionUno.src === eleccionDos.src){
+                setCartas(antCartas => {
+                    return antCartas.map(carta => {
+                        if(carta.src === eleccionUno.src){
+                            return{...carta, elegida: true}
+                        }else{
+                            return carta
+                        }
+                    })
+                })
+                console.log("son iguales")
+                reinicioTurno()
+            }else{
+                console.log("no son iguales")
+                setTimeout(() => reinicioTurno(), 1000)
+            }
+        }
+    }, [eleccionUno, eleccionDos])
+
+    //Reinicio de las elección e incremento de los turnos jugados
+    const reinicioTurno = () => {
+        setEleccionUno(null)
+        setEleccionDos(null)
+        setTurnos(antTurno => antTurno+1)
+        setDesabilitada(false)
+    }
+
     return(
         <div className = "App">
             <h1>Juego de memoria</h1>
@@ -55,6 +87,8 @@ export default function App(){
                         key={carta.id} 
                         carta = {carta}
                         resolverEleccion = {resolverEleccion} //Pasamos la funcion como una propiedad para la carta
+                        volteada = {carta === eleccionUno || carta === eleccionDos || carta.elegida}
+                        desabilitada={desabilitada}
                     />
                 ))}
             </div>
