@@ -4,7 +4,8 @@ import Inicio from './componentes/Inicio';
 import Prueba from './componentes/Prueba';
 import Desarrollador from './componentes/Desarrollador'
 import Juego from './componentes/juegos/PiedraPapelTijera/Juego'
-import Hangman from './componentes/juegos/Hangman/Hangman'
+import Hangman from './componentes/juegos/hangmanFuncion/Hangman'
+import MemoriaApp from './componentes/juegos/memoriaEzequiel/MemoriaApp'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/desarrollador' element={<Desarrollador />}/>
         <Route path= '/juegoppt' element={<Juego/>}/>
         <Route path= '/juegoahorcadito' element={<Hangman/>}/>
+        <Route path= '/memoriaapp' element={<MemoriaApp/>}/>
       </Routes>
     </div>
   );
