@@ -5,12 +5,12 @@ import CartaIndividual from './CartaIndividual';
 //array de las imagenes de las cartas, recordar pasar a un json
 const cartaImagen = [
     //"src": "ruta a una imagen especifica"
-    {"src" : "/img/helmet-1.png"},
-    {"src" : "/img/potion-1.png"},
-    {"src" : "/img/ring-1.png"},
-    {"src" : "/img/scroll-1.png"},
-    {"src" : "/img/shield-1.png"},
-    {"src" : "/img/sword-1.png"}
+    {"src" : "/img/Hierophant.png"},
+    {"src" : "/img/HPriestess.png"},
+    {"src" : "/img/Lovers.png"},
+    {"src" : "/img/Moon.png"},
+    {"src" : "/img/Star.png"},
+    {"src" : "/img/cover.png"}
 ]
 
 function MemoryGame(){
