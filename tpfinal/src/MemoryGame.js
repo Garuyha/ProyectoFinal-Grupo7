@@ -10,7 +10,7 @@ const cartaImagen = [
     {"src" : "/img/Lovers.png"},
     {"src" : "/img/Moon.png"},
     {"src" : "/img/Star.png"},
-    {"src" : "/img/cover.png"}
+    {"src" : "/img/Sun.png"}
 ]
 
 function MemoryGame(){
@@ -48,9 +48,9 @@ console.log(carta)
     return(
 
         <div className="MemoryGame">
-            <h1>MemoryGame</h1>
+            <h1>Tarot Mágico</h1>
             {/* cada vez que apretamos el boton jugar, llamamos a la funcioón barajar cartas */}
-            <button className='memoryButton' onClick={barajarCartas}>Jugar uwu</button>
+            <button className='memoryButton' onClick={barajarCartas}>Jugar</button>
 
 {/* renderiza todas las cartas y usa como clave el id random añadido en barajar carta */}
         <div className="grillaCartas">

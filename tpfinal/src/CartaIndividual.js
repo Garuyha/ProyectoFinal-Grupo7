@@ -15,7 +15,7 @@ return (
 
 <div>
     <img className="frenteCarta" src={carta.src} alt="frente"></img>
-    <image className="dorsoCarta" src="/img/cover.png" onClick={gestionarClick} alt="dorso"/>
+    <img className="dorsoCarta" src="/img/cover.png" onClick={gestionarClick} alt="dorso"/>
 </div>
 
 </div>
