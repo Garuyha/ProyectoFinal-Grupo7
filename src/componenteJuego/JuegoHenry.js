@@ -16,9 +16,10 @@ super('Juego');
 
 preload(){
     this.load.image('fondo','./imgHenry/fondo.png');
-    this.load.image('costado','./imgHenry/bloqueCostado.png');
-    this.load.image('parado','./imgHenry/bloqueParado.png');
-    this.load.image('mapa','./imgHenry/parte1.png');
+    this.load.image('largoCostado','./imgHenry/ParedCostadoLargo.png');
+    this.load.image('largoParado','./imgHenry/ParedParadoLargo.png');
+    this.load.image('cortoCostado','./imgHenry/ParedCostadoCorto.png');
+    this.load.image('cortoParado','./imgHenry/ParedParadoCorto.png');
     this.load.image('personaje','./imgHenry/pelota.png');
     
     
@@ -38,21 +39,27 @@ create(){
     //creando las plataformas
     this.platforms = this.physics.add.staticGroup();
  
-    this.platforms.create(800,350,'costado').setScale(2).refreshBody();
-    this.platforms.create(20,250,'parado');
-    this.platforms.create(250,20,'costado');
-    this.platforms.create(250,120,'costado');
-    this.platforms.create(610,75,'costado');
-    this.platforms.create(480,295,'parado');
-    this.platforms.create(250,340,'parado');
-    this.platforms.create(235,550,'costado');
-    
+    this.platforms.create(326,55,'largoCostado'); //plataformas que separan el juego del lugar de score
+    this.platforms.create(975,55,'largoCostado'); 
+    this.platforms.create(165,155,'cortoCostado');// plataformas de la misma fila cordenada Y (155)
+    this.platforms.create(550,155,'cortoCostado');
+    this.platforms.create(1100,155,'largoCostado');  
+    this.platforms.create(408,363,'largoParado');
+    this.platforms.create(735,320,'cortoParado'); 
+    this.platforms.create(628,320,'cortoParado');
+    this.platforms.create(380,248,'cortoCostado');//plataformas de la misma fila cordenada Y (248)
+    this.platforms.create(0,248,'cortoCostado');
+    this.platforms.create(917,248,'cortoCostado');
+    this.platforms.create(917,248,'cortoCostado');
+    this.platforms.create(1300,248,'cortoCostado');
+    this.platforms.create(1278,510,'largoParado');
+   
     
 
     
 
     //player asignado con sprite
-    this.player = this.physics.add.sprite(5,10, 'personaje')
+    this.player = this.physics.add.sprite(5,100, 'personaje')
     this.player.setCollideWorldBounds(true);
 
     
