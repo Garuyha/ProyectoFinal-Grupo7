@@ -48,48 +48,40 @@ create(){
     this.platforms.create(158,155,'cortoCostado');// plataformas de la misma fila cordenada Y (155)
     this.platforms.create(550,155,'cortoCostado');
     this.platforms.create(1110,155,'largoCostado'); 
-    this.platforms.create(408,363,'largoParado');
-    this.platforms.create(750,325,'cortoParado'); 
-    this.platforms.create(615,325,'cortoParado');
-    this.platforms.create(390,248,'especialCostado');//plataformas de la misma fila cordenada Y (248)
-    this.platforms.create(0,248,'cortoCostado')
-    
-    // 
-    //  
-    // 
-    // 
-    // this.platforms.create(0,248,'cortoCostado');
-    // this.platforms.create(917,248,'cortoCostado');
-    // this.platforms.create(917,248,'cortoCostado');
-    // this.platforms.create(1350,248,'cortoCostado');
-    // this.platforms.create(1278,505,'largoParado'); 
-    // this.platforms.create(0,350,'largoCostado');//plataformas de la misma fila cordenada Y (335)
-    // this.platforms.create(1095,339,'cortoCostado');
-    // this.platforms.create(835,408,'cortoParado');
-    // this.platforms.create(1000,430,'cortoCostado');//plataformas de la misma fila cordenada Y (430)
-    // this.platforms.create(1045,430,'cortoCostado');
-    // this.platforms.create(1000,440,'cortoCostado');//plataformas de la misma fila cordenada Y (440)
-    // this.platforms.create(1045,440,'cortoCostado');
-    // this.platforms.create(800,480,'largoCostado');
-    // this.platforms.create(1190,501,'cortoParado');
-    // this.platforms.create(800,570,'largoCostado');
-    // this.platforms.create(1190,732,'cortoParado');
-    // this.platforms.create(1100,732,'cortoParado');
-    // this.platforms.create(755,678,'largoCostado');
-    // this.platforms.create(755,660,'largoCostado');
-    // this.platforms.create(305,600,'largoParado');
-    // this.platforms.create(70,630,'cortoCostado');
-    // this.platforms.create(170,435,'especialCostado');
-    // this.platforms.create(117,535,'especialCostado');
-    // this.platforms.create(100,535,'especialCostado');
-    // this.platforms.create(520,363,'especial');
-    // this.platforms.create(200,750,'especial');
-    // this.platforms.create(80,750,'especial');
-    
+    this.platforms.create(407.5,362.5,'largoParado');
+    this.platforms.create(760,323.5,'cortoParado'); //plataformas con cordenandas X (323.5)
+    this.platforms.create(615,323.5,'cortoParado'); 
+    this.platforms.create(760,383.5,'cortoParado');
+    this.platforms.create(615,383.5,'cortoParado'); 
+    this.platforms.create(390,250,'especialCostado');//plataformas de la misma fila cordenada Y (250) 
+    this.platforms.create(0,250,'cortoCostado')
+    this.platforms.create(942.6,250,'cortoCostado');
+    this.platforms.create(1300,250,'especialCostado');
+    this.platforms.create(1278,522.5,'largoParado'); //ver si cambia es el que esta desapareciendo a la derecha
+    this.platforms.create(0,355,'largoCostado');//plataformas de la misma fila cordenada Y (355)
+    this.platforms.create(1015,355,'cortoCostado');
+    this.platforms.create(872.5,468.9,'cortoParado');
+    this.platforms.create(1015,455,'cortoCostado');//plataformas de la misma fila cordenada Y (455)
+    this.platforms.create(852.5,550,'largoCostado');
+    this.platforms.create(513.5,476.5,'cortoParado');
+    this.platforms.create(712.5,650,'largoCostado');
+    this.platforms.create(1157.5,723.5,'cortoParado');
+    this.platforms.create(1130.5,723.5,'cortoParado');
+    this.platforms.create(305,630,'largoParado');
+    this.platforms.create(65,660,'cortoCostado'); // izquierda abajo
+    this.platforms.create(171,462.5,'especialCostado');
+    this.platforms.create(112.5,560,'especialCostado');
+    this.platforms.create(513.5,390,'especial');
+    this.platforms.create(407.5,515,'especial');
+    this.platforms.create(207.5,780,'especial');
+    this.platforms.create(95,780,'especial');
+    this.platforms.create(712.5,755,'largoCostado');
+
+
     
 
     //player asignado con sprite
-    this.player = this.physics.add.sprite(5,100, 'personaje')
+    this.player = this.physics.add.sprite(200,600, 'personaje') //5,100
     this.player.setCollideWorldBounds(true);
 
     
