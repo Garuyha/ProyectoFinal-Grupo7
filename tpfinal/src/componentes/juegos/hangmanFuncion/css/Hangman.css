@@ -25,17 +25,48 @@
 }
 
 .textohangman{
-    font-size: 30px;
+    font-family: Bouncy-Thin;
+    font-size: 40px;
     text-align: center;
+    color: #393E46;
 }
 
 .botonhangman{
     text-align: center;
     background: none;
+    color: #393E46;
+}
+
+.btnhangman{
+    border:none;
+    padding: 17px;
+    font-size: 18px;
+}
+
+.btnhangman:hover{
+    background-color: #6D9886;
+    color: #F7F7F7;
+    border: none;
 }
 
 .fondojuegohangman{
     background: #fff;
     margin: 80px;
     padding: 40px 0px 40px 0px;
+}
+
+.botontecladohangman{
+    padding: 15px;
+    border: none;
+}
+
+.botontecladohangman:hover{
+    padding: 15px;
+    background: #6D9886;
+    border: none;
+}
+
+@font-face{
+    font-family: Bouncy-Thin;
+    src: url('../fuentes/Bouncy-Thin-PERSONAL_USE_ONLY_1.ttf');
 }
