@@ -38,7 +38,6 @@ const palabras = [
     fruta: "DURAZNO",
     pista: "Tiene una gran y única semilla y suele ser usado para licuados.",
   },
-  { fruta: "PIÑA", pista: "Tambien es como se le dice a una trompada." },
   {
     fruta: "CABALLO",
     pista: "Esto no es una fruta ¿Qué hace aquí? Bueno... Montar a ...",
@@ -64,7 +63,6 @@ export default function Hangman() {
     "L",
     "M",
     "N",
-    "Ñ",
     "O",
     "P",
     "Q",
@@ -112,7 +110,7 @@ export default function Hangman() {
       <div className="textohangman">
         {
           !maskedWord.includes("_")
-            ? "VICTORIA"
+            ? "¡VICTORIA!"
             : "Presione el boton para generar una palabra aleatoria." //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
         }
       </div>
