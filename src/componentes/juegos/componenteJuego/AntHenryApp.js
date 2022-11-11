@@ -1,10 +1,8 @@
 import Phaser from 'phaser';
-//import Game from './componentes/Game.js';
+import Juego from './JuegoHenry.js';
 import { useEffect, useState } from 'react';
-import './App.css';
 function App() {
-
- const[ listo,setListo  ]= useState(false);
+  const[ listo,setListo  ]= useState(false);
    
 useEffect( () =>{
 
@@ -12,7 +10,7 @@ const config= {
 type: Phaser.AUTO,
 width:1300,                            
 height:750,                            
-scene:[],     
+scene:[Juego],     
 physics: {
 default: 'arcade',
 arcade: {                               
