@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
-import { Link } from "react-router-dom";
 import juegosphaser from './json/juegosphaser.json'
+import { Link } from "react-router-dom";
 import './css/MenuReact.css'
 
 function MenuPhaser(){

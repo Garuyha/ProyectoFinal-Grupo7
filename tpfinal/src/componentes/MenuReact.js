@@ -3,7 +3,7 @@ import juegosreact from './json/juegosreact.json'
 import { Link } from "react-router-dom";
 import './css/MenuReact.css'
 
-function Prueba(){
+function MenuReact(){
     return(
   <Fragment>
         {
@@ -39,5 +39,5 @@ function Prueba(){
       </Fragment>
     )
   }
-  export default Prueba;
+  export default MenuReact;
   

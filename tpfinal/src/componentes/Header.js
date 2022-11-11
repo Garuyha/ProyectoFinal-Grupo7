@@ -6,7 +6,7 @@ import Logo from './imagenes/Mate.png'
 
 function Header(){
     return(
-    <body>
+    <div className='gato'>
         <header>
             <div className='containertwo'>
                 <div className='logo'>
@@ -17,13 +17,13 @@ function Header(){
             <div className='container'>
                 <div className='navbar'>
                     <Link to='/'><button className='categoria'> INICIO </button></Link>
-                    <Link to="/juegoarkaoid"><button className='categoria'> JUEGOS PHASER </button></Link>
+                    <Link to="/menuphaser"><button className='categoria'> JUEGOS PHASER </button></Link>
                     <Link to='/menureact'><button className='categoria'> JUEGOS REACT </button></Link>
                     <Link to='/desarrollador'><button className='categoria'> DESARROLLADORES </button></Link>
                 </div>
             </div>
         </header>
-    </body>
+    </div>
     )
   }
   export default Header;
