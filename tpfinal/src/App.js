@@ -5,7 +5,6 @@ import Preloader from './snakeIvan/componentes/Preloader';
 import './App.css';
 
 
-import NivelDos from './snakeIvan/componentes/NivelDos';
 import NivelUno from './snakeIvan/componentes/NivelUno';
 
 

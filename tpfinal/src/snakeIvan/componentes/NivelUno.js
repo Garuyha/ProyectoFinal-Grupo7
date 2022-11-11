@@ -78,15 +78,15 @@ super('NivelUno'  );
         this.physics.add.collider(this.body, this.frutas, this.frutaColision, null, this);  //  Se añade la funcion de colision a los objetos establecidos en los parametros.
 
        
-        this.map=this.add.tilemap('tiles')
+    this.map=this.add.tilemap('tiles')
     var tileset=this.map.addTilesetImage("grass", "grass");
  
-     this.map.createStaticLayer("bordes", tileset);
+     var solidos=this.map.createStaticLayer("bordes", tileset);
+     
 
+    solidos.setCollisionByProperty({solido:true })
 
-    
-
-
+    this.physics.add.collider(this.body, solidos)
 
      
         
