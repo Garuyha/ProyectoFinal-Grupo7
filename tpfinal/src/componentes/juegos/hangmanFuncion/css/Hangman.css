@@ -1,0 +1,41 @@
+.pistahangman{
+    font-size: 25px;
+    text-align: center;
+}
+
+.trollasio{
+    width:  518px;
+    height: 308px;
+    margin-left: 40%;
+}
+
+.contadorhangman{
+    text-align: right;
+    margin-right: 40px;
+    font-size: 25px;
+}
+
+.palabrahangman{
+    text-align: center;
+    font-size: 25px;
+}
+
+.tecladohangman{
+    text-align: center;
+}
+
+.textohangman{
+    font-size: 30px;
+    text-align: center;
+}
+
+.botonhangman{
+    text-align: center;
+    background: none;
+}
+
+.fondojuegohangman{
+    background: #fff;
+    margin: 80px;
+    padding: 40px 0px 40px 0px;
+}

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './css/Hangman.css'
 
 const palabras = [
     {fruta: "MANZANA", pista: "Es roja"},
@@ -18,7 +19,8 @@ const palabras = [
     {fruta: "MANDARINA", pista: "Es de color naranja, pero no es una naranja"},
     {fruta: "MELON", pista: "Cuando hace calor se lo parte y rellena con vino"},
     {fruta: "MELOCOTON", pista: "Es roja"},
-    {fruta: "PIÑA", pista: "Tambien es como se le dice a una trompada"}
+    {fruta: "PIÑA", pista: "Tambien es como se le dice a una trompada"},
+    {fruta: "CABALLO", pista: "Esto no es una fruta ¿Qué hace aquí? Bueno... Montar a ..."}
 ] //diccionario
 
 export default function Hangman() {
@@ -57,38 +59,48 @@ export default function Hangman() {
     // Dependiendo de la cantidad de errores se irán apareciendo las extremidades del ahorcado, hasta llegar al gameover
     
 
-    return  <div>
-            <button onClick={reinicioTurno}>Jugar</button>
+    return  <div className='fondojuegohangman'>
             <div>
-                <p>Errores: {wrongLetter}/6</p> 
-                <img src={trollface} alt='' />
+                <p className='contadorhangman'>Errores: {wrongLetter}/6</p> 
+                <img src={trollface} alt='' className='trollasio'/>
             </div>
-            <p>{maskedWord}</p>
+            <div className='textohangman'>
             {
-                //se mapea el alphabet dando lugar al teclado, además de que hay un onClick que sirve para detectar las letras en caso de ser presionadas.
-            alphabets.map((alphabet, index) => 
-            <button key={index} onClick={() => {
-                if (wrongLetter < 6){ // el if indica que las teclas serán detectadas solo en caso de que este dentro del margen de intentos, si los intentos fallidos llegan a 6 ya no las detectará y terminará el juego
-                    if (word.includes(alphabet)) {
-                        setCorrectGuesses([...correctGuesses, alphabet]); 
-                    } else { //En caso de que las letras no sean correctas los intentos disminuiran y el contador de intentos fallidos aumentara
-                        setWrongLetter(wrongLetter+1);
+                !maskedWord.includes("_")  ? "¡Ganaste!" : "Presione el boton para generar una palabra aleatoria." //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
+            }
+            </div>
+            <p className='palabrahangman'>{maskedWord}</p>
+            <div className='tecladohangman'>
+                <div className='containerteclado'>
+                    {
+                        //se mapea el alphabet dando lugar al teclado, además de que hay un onClick que sirve para detectar las letras en caso de ser presionadas.
+                    alphabets.map((alphabet, index) => 
+                    <button key={index} onClick={() => {
+                        if (wrongLetter < 6){ // el if indica que las teclas serán detectadas solo en caso de que este dentro del margen de intentos, si los intentos fallidos llegan a 6 ya no las detectará y terminará el juego
+                            if (word.includes(alphabet)) {
+                                setCorrectGuesses([...correctGuesses, alphabet]); 
+                            } else { //En caso de que las letras no sean correctas los intentos disminuiran y el contador de intentos fallidos aumentara
+                                setWrongLetter(wrongLetter+1);
+                            }
+                        }
+                    }}>{alphabet}</button>)
                     }
-                }
-            }}>{alphabet}</button>)
-            }
-            <h1>
+                </div>
+            </div>
+            <p className='pistahangman'>
             {
-                !maskedWord.includes("_")  ? "Precione el boton JUGAR para general una palabra aleatoria." : "" //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
-            }
-            </h1>{
                 wrongLetter < 6 ? "Ayuda: " +pista : ""
             }
+            </p>
+
             <h1>
             {
                 wrongLetter > 5 ? "La respuesta era: " + word : "" //En caso de que el juego haya terminado y no hayas ganado aparecera el texto de derrota
             }
             </h1>
-            
+            <div className = 'botonhangman'>
+                <button onClick={reinicioTurno}>{wrongLetter > 5 ? "Reintentar":"Generar palabra"}</button>
             </div>
+            </div>
+
 }
