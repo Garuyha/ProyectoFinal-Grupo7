@@ -17,7 +17,7 @@ function Header(){
             <div className='container'>
                 <div className='navbar'>
                     <Link to='/'><button className='categoria'> INICIO </button></Link>
-                    <button className='categoria'> JUEGOS PHASER </button>
+                    <Link to="/juegoarkaoid"><button className='categoria'> JUEGOS PHASER </button></Link>
                     <Link to='/menureact'><button className='categoria'> JUEGOS REACT </button></Link>
                     <Link to='/desarrollador'><button className='categoria'> DESARROLLADORES </button></Link>
                 </div>
