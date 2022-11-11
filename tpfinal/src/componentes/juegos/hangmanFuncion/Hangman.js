@@ -5,24 +5,11 @@ const palabras = [
   { fruta: "MANZANA", pista: "Es roja." },
   { fruta: "NARANJA", pista: "Su color le da nombre." },
   { fruta: "UVA", pista: "Crece en vides." },
-  {
-    fruta: "ANANA",
-    pista: "Puede ir en la pizza, pero a la gente no le gusta.",
-  },
+  { fruta: "ANANA", pista: "Puede ir en la pizza, pero a la gente no le gusta.",},
   { fruta: "BANANA", pista: "Tiene mucho potasio." },
-  {
-    fruta: "FRUTILLA",
-    pista: "Existe una serie infantil con su nombre en diminutivo.",
-  },
-  {
-    fruta: "KIWI",
-    pista: "Tambien es el nombre de un pajaro incapaz de volar.",
-  },
-  {
-    fruta: "TOMATE",
-    pista:
-      "Se la usa en las ensaladas, por lo que se piensa que es una verdura.",
-  },
+  { fruta: "FRUTILLA", pista: "Existe una serie infantil con su nombre en diminutivo.", },
+  { fruta: "KIWI", pista: "Tambien es el nombre de un pajaro incapaz de volar.", },
+  { fruta: "TOMATE", pista: "Se la usa en las ensaladas, por lo que se piensa que es una verdura.",},
   { fruta: "ARANDANO", pista: "Es un fruto del bosque." },
   { fruta: "CEREZA", pista: "Un sabor de helado común, pero no es vainilla." },
   { fruta: "FRAMBRUESA", pista: "Es roja, empieza con F y termina con A." },
@@ -30,18 +17,9 @@ const palabras = [
   { fruta: "LIMA", pista: "XXXX limon." },
   { fruta: "LIMON", pista: "Lima XXXXX." },
   { fruta: "MANDARINA", pista: "Es de color naranja, pero no es una naranja." },
-  {
-    fruta: "MELON",
-    pista: "Cuando hace calor se lo parte y rellena con vino.",
-  },
-  {
-    fruta: "DURAZNO",
-    pista: "Tiene una gran y única semilla y suele ser usado para licuados.",
-  },
-  {
-    fruta: "CABALLO",
-    pista: "Esto no es una fruta ¿Qué hace aquí? Bueno... Montar a ...",
-  },
+  { fruta: "MELON", pista: "Cuando hace calor se lo parte y rellena con vino." },
+  { fruta: "DURAZNO", pista: "Tiene una gran y única semilla y suele ser usado para licuados." },
+  { fruta: "CABALLO", pista: "Esto no es una fruta ¿Qué hace aquí? Bueno... Montar a ..." },
 ]; //diccionario
 
 export default function Hangman() {
