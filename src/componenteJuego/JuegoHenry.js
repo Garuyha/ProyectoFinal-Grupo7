@@ -33,15 +33,12 @@ preload(){
     this.load.image('banana','./imgHenry/banana.png');
     this.load.image('naranja','./imgHenry/naranja.png');
     this.load.image('uva','./imgHenry/uva.png');
+    this.load.image('ciruela','./imgHenry/ciruela.png');
+    this.load.image('durazno','./imgHenry/durazno.png');
+    this.load.image('limon','./imgHenry/limon.png');
+    this.load.image('sandia','./imgHenry/sandia.png');
     this.load.image('personaje','./imgHenry/pelota.png');
     
-    
-    
-    
-
-
-    
- 
 }
 
 //  Se crean las imagenes y sonidos
@@ -109,49 +106,67 @@ create(){
       y: 162,   
     } 
   });      
-  
+
+//agregando las ananas  
   this.ananas = this.physics.add.staticGroup({
     key: 'anana',
-    frameQuantity: 9,
+    frameQuantity: 5,
     gridAlign: {
-      width: 13, 
+      width: 1, 
       height: 156, 
       cellWidth: 100, 
-      cellHeight: 150, 
-      x: 500, 
-      y: 260,   
+      cellHeight: 60, 
+      x: 720, 
+      y: 270,   
     } 
   });
- 
+
+//agregando las bananas
   this.bananas = this.physics.add.staticGroup({
     key: 'banana',
     frameQuantity: 6,
     gridAlign: {
-      width: 13, 
+      width: 3, 
       height: 156, 
       cellWidth: 60, 
-      cellHeight: 80, 
+      cellHeight: 100, 
       x: 930, 
-      y: 430,   
+      y: 438,   
     } 
     
   });
 
+//agregando las naranjas
   this.naranjas = this.physics.add.staticGroup({
     key: 'naranja',
-    frameQuantity: 6,
+    frameQuantity: 3,
     gridAlign: {
       width: 13, 
       height: 156, 
-      cellWidth: 60, 
+      cellWidth: 65, 
       cellHeight: 80, 
-      x: 930, 
-      y: 525,   
+      x: 835, 
+      y: 225,   
     } 
   });
-  
+
+//agregando las uvas 
   this.uvas = this.physics.add.staticGroup({
     key: 'uva',
+    frameQuantity: 14,
+    gridAlign: {
+      width: 7, 
+      height: 2, 
+      cellWidth: 55, 
+      cellHeight: 100, 
+      x: 33, 
+      y: 235,   
+    } 
+  });
+
+//agregando las ciruelas
+  this.ciruelas = this.physics.add.staticGroup({
+    key: 'ciruela',
     frameQuantity: 7,
     gridAlign: {
       width: 13, 
@@ -159,9 +174,53 @@ create(){
       cellWidth: 55, 
       cellHeight: 80, 
       x: 33, 
-      y: 225,   
+      y: 435,   
     } 
   });
+  
+//agregando los duraznos
+  this.duraznos = this.physics.add.staticGroup({
+    key: 'durazno',
+    frameQuantity: 9,
+    gridAlign: {
+      width: 3, 
+      height: 156, 
+      cellWidth: 85, 
+      cellHeight: 95, 
+      x: 60, 
+      y: 545,   
+    } 
+  });
+
+//agregando los limones
+  this.limones = this.physics.add.staticGroup({
+    key: 'limon',
+    frameQuantity: 24,
+    gridAlign: {
+      width: 12, 
+      height: 156, 
+      cellWidth: 55, 
+      cellHeight: 95, 
+      x: 450, 
+      y: 640,   
+    } 
+  });
+
+//agregando las sandias
+  this.sandias = this.physics.add.staticGroup({
+    key: 'sandia',
+    frameQuantity: 9,
+    gridAlign: {
+      width: 3, 
+      height: 156, 
+      cellWidth: 85, 
+      cellHeight: 95, 
+      x: 100, 
+      y: 545,   
+    } 
+  });
+
+  
  
   
 
@@ -178,37 +237,40 @@ create(){
   this.physics.add.overlap(this.player, this.bananas, this.bananaColision, null, this);
   this.physics.add.overlap(this.player, this.naranjas, this.naranjaColision, null, this);
   this.physics.add.overlap(this.player, this.uvas, this.uvaColision, null, this);
+  this.physics.add.overlap(this.player, this.ciruelas, this.ciruelaColision, null, this);
+  this.physics.add.overlap(this.player, this.duraznos, this.duraznoColision, null, this);
+  this.physics.add.overlap(this.player, this.limones, this.limonColision, null, this);
+  this.physics.add.overlap(this.player, this.sandias, this.sandiaColision, null, this);
 
 //texto de puntaje
   this.scoreText = this.add.text(13, 10, 'score: 0', { fontSize: '32px', fill: '#FF0606' });
-
- 
 
 }
 
 
 update(){
+
 // Movimientos segun el cursor del teclado
   if (this.cursors.left.isDown)
   {
-    this.player.setVelocityX(-140);
+    this.player.setVelocityX(-145);
     this.player.setVelocityY(0); 
    
   }
   else if (this.cursors.right.isDown)
   {
-    this.player.setVelocityX(140);
+    this.player.setVelocityX(145);
     this.player.setVelocityY(0);
   
       
   }else if (this.cursors.up.isDown)
   {
-    this.player.setVelocityY(-140);
+    this.player.setVelocityY(-145);
     this.player.setVelocityX(0);
   }
   else if (this.cursors.down.isDown)
 {
-  this.player.setVelocityY(140);
+  this.player.setVelocityY(145);
   this.player.setVelocityX(0);
 }
 
@@ -227,23 +289,46 @@ ananaColision(player,ananas){
 }
 
 bananaColision(player,bananas){
-  bananas.disableBody(true,true);
+  bananas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen           
   this.score += 30;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 naranjaColision(player,naranjas){
-  naranjas.disableBody(true,true);
+  naranjas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
   this.score += 50;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 uvaColision(player,uvas){
-  uvas.disableBody(true,true);
+  uvas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
   this.score += 60;
   this.scoreText.setText('Score: ' + this.score)
 }
 
+ciruelaColision(player,ciruelas){
+  ciruelas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
+  this.score += 80;
+  this.scoreText.setText('Score: ' + this.score)
+}
+
+duraznoColision(player,duraznos){
+  duraznos.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
+  this.score += 120;
+  this.scoreText.setText('Score: ' + this.score)
+}
+
+limonColision(player,limones){
+  limones.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
+  this.score += 1700;
+  this.scoreText.setText('Score: ' + this.score)
+}
+
+sandiaColision(player,sandias){
+  sandias.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
+  this.score += 1700;
+  this.scoreText.setText('Score: ' + this.score)
+}
 
 }
 
