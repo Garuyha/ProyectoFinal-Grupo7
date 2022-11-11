@@ -1,0 +1,88 @@
+.opciones{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.opcion{
+    font-size: 40px;
+    border: 3px solid black;
+    border-radius: 10%;
+    padding: 6px;
+    cursor: pointer;
+    background-color: black;
+    color: gold;
+    margin: 10px 0px 0px 0px;    
+
+}
+.opcion:hover{
+    background-color: white;
+}
+
+.resultado{
+    font-size: 60px;
+    font-weight: 100;
+    color: #000;
+    position:absolute;
+    left: 40%;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.contenedorppt{    
+    background-color:#fff;
+    margin: 80px 80px;
+    padding: 60px 0px;
+}
+
+.tarjetaContenedor{    
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+    
+}
+.tarjetaJugador{  
+    font-size: 60px;  
+    display: grid;
+    justify-items: center;
+    background: rgb(255, 255, 255);
+    color: #000;
+    padding: 20px;
+    box-shadow: 20px 15px 0px rgba(168, 103, 89, 0.7);
+    border-radius: 10px;
+    width: 200px;
+}
+.tarjetaMaquina{    
+    font-size: 60px;  
+    display: grid;
+    justify-items: center;
+    background: rgb(255, 255, 255);
+    color: black;
+    padding: 20px;
+    box-shadow: 20px 15px 0px rgba(168, 103, 89, 0.7);
+    border-radius: 10px;
+    width: 200px;
+}
+
+.botonMenu{
+    text-align:center;
+    display: block;
+}
+
+.btn{
+    display: block;
+    background: rgb(252, 195, 138);
+    margin: 10px 250px;
+    padding: 10px;
+    box-shadow: 20px 15px 0px rgba(168, 103, 89, 0.7);
+    border-radius: 10px;
+}
+
+.imagenSeleccion{    
+    width: 226px;
+    height: 226px;
+    margin: 0;
+    padding: 0;
+}
+
