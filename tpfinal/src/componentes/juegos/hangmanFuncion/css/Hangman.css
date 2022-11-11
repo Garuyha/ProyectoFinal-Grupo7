@@ -1,18 +1,23 @@
 .pistahangman{
     font-size: 25px;
     text-align: center;
+    font-family: Papernote;
 }
 
 .trollasio{
     width:  518px;
     height: 308px;
-    margin-left: 40%;
 }
 
 .contadorhangman{
     text-align: right;
     margin-right: 40px;
     font-size: 25px;
+    font-family: Papernote;
+}
+
+.imagencontainerhangman{
+    text-align: center;
 }
 
 .palabrahangman{
@@ -30,7 +35,7 @@
     font-size: 40px;
     text-align: center;
     color: #393E46;
-    margin: 40px;
+    margin: 45px;
 }
 
 .botonhangman{
@@ -43,6 +48,7 @@
     border:none;
     padding: 17px;
     font-size: 18px;
+    font-family: Papernote;
 }
 
 .btnhangman:hover{
@@ -52,12 +58,19 @@
 }
 
 .fondojuegohangman{
-    background: #fff;
+    background: #F2E7D5;
+    border-radius: 4%;
     margin: 80px;
     padding: 40px 0px 40px 0px;
 }
 
+.tecladohangman{
+    margin: 0px 20px;
+}
+
 .botontecladohangman{
+    font-family: Papernote;
+    background-color: #c7c7c7;
     padding: 15px;
     border: none;
 }
