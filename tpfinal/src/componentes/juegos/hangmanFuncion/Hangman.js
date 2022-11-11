@@ -45,7 +45,7 @@ const palabras = [
 ]; //diccionario
 
 export default function Hangman() {
-  const [word, setWord] = useState("a"); // palabra que va a aparecer
+  const [word, setWord] = useState(" "); // palabra que va a aparecer
   const [pista, setPista] = useState("");
 
   const alphabets = [
@@ -127,7 +127,7 @@ export default function Hangman() {
                 key={index}
                 onClick={() => {
                   if (wrongLetter < 6 && maskedWord.includes("_")) {
-                    // el if indica que las teclas serán detectadas solo en caso de que este dentro del margen de intentos, si los intentos fallidos llegan a 6 ya no las detectará y terminará el juego
+                    // el if indica que las teclas serán detectadas solo en caso de que este dentro del margen de intentos y que la palabra no este completa, si los intentos fallidos llegan a 6 ya no las detectará y terminará el juego
                     if (word.includes(alphabet)) {
                       setCorrectGuesses([...correctGuesses, alphabet]);
                     } else {
