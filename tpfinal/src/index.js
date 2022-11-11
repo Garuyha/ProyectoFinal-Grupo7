@@ -1,17 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-import HenryApp from './componentes/juegos/componenteJuego/AntHenryApp';
+import App from './App';
 import MemoriaApp from './componentes/juegos/memoriaEzequiel/MemoriaApp'
 import AntApp from './componentes/juegos/snakeIvan/AntApp'
-import App from './App'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <App/>
       </BrowserRouter>
     </React.StrictMode>
 );
