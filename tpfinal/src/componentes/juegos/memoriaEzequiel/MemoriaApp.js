@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
 import CartaUnica from './componentes/CartaUnica';
 import './cssEzequiel/MemoriaApp.css';
+import {Howl, Howler} from "howler"
 
 /**Array donde se guardan las imagenes y se crea fuera de los componentes
  * porque son valores que nunca deben cambiar.
 */
 const cartasImagenes = [
-    {"src": "./assetsEzequiel/anillo.png", elegida: false},
-    {"src": "./assetsEzequiel/casco.png", elegida: false},
-    {"src": "./assetsEzequiel/espada.png", elegida: false},
-    {"src": "./assetsEzequiel/escudo.png", elegida: false},
-    {"src": "./assetsEzequiel/papiro.png", elegida: false},
-    {"src": "./assetsEzequiel/posion.png", elegida: false}
+    {"src": "./assetsEzequiel/caruaje.png", sonido: "./audioEzequiel/seleccion-sonido.mp3",elegida: false},
+    {"src": "./assetsEzequiel/estrella.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
+    {"src": "./assetsEzequiel/hermitaneo.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
+    {"src": "./assetsEzequiel/hiedrofante.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
+    {"src": "./assetsEzequiel/mago.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
+    {"src": "./assetsEzequiel/mundo.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false}
 ]
+
 
 export default function App(){
 
@@ -21,7 +23,8 @@ export default function App(){
     const[eleccionUno, setEleccionUno] = useState(null); //La primera carta que elige el jugador
     const[eleccionDos, setEleccionDos] = useState(null); //La segunda carta que elige el jugador
     const[desabilitada, setDesabilitada] = useState(false);
-
+ 
+        
     /**Mezclar cartas
      * Esta funcion hace tres cosas principalmente:
      *  1) Toma todas las imagenes de cartasImagenes y las guarda en el array mezclarCartas.
@@ -59,7 +62,6 @@ export default function App(){
                         }
                     })
                 })
-                console.log("son iguales")
                 reinicioTurno()
             }else{
                 console.log("no son iguales")
@@ -75,7 +77,7 @@ export default function App(){
         setTurnos(antTurno => antTurno+1)
         setDesabilitada(false)
     }
-
+    
     return(
         <div className = "App">
             <h1>Juego de memoria</h1>

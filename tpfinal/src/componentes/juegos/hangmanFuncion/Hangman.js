@@ -1,29 +1,30 @@
 import React, {useState} from 'react';
 
 const palabras = [
-    "MANZANA",
-    "NARANJA",
-    "UVA",
-    "ANANA",
-    "BANANA",
-    "FRUTILLA",
-    "KIWI",
-    "TOMATE",
-    "ARANDANO",
-    "CEREZA",
-    "FRAMBRUESA",
-    "HIGO",
-    "LIMA",
-    "LIMON",
-    "MANDARINA",
-    "MELON",
-    "MELOCOTON",
-    "PIÑA",
+    {fruta: "MANZANA", pista: "Es roja"},
+    {fruta: "NARANJA", pista: "Su color le da nombre"},
+    {fruta: "UVA", pista: "Crece en vides"},
+    {fruta: "ANANA", pista: "Puede ir en la pizza, pero a la gente no le gusta"},
+    {fruta: "BANANA", pista: "Tiene mucho potasio"},
+    {fruta: "FRUTILLA", pista: "Existe una serie infantil con su nombre en diminutivo"},
+    {fruta: "KIWI", pista: "Tambien es el nombre de un pajaro incapaz de volar"},
+    {fruta: "TOMATE", pista: "Se la usa en las ensaladas, por lo que se piensa que es una verdura"},
+    {fruta: "ARANDANO", pista: "Es un fruto del bosque"},
+    {fruta: "CEREZA", pista: "Tu sabor de helado favorito"},
+    {fruta: "FRAMBRUESA", pista: "Es roja"},
+    {fruta: "HIGO", pista: "Es roja"},
+    {fruta: "LIMA", pista: "XXXX limon"},
+    {fruta: "LIMON", pista: "Lima XXXXX"},
+    {fruta: "MANDARINA", pista: "Es de color naranja, pero no es una naranja"},
+    {fruta: "MELON", pista: "Cuando hace calor se lo parte y rellena con vino"},
+    {fruta: "MELOCOTON", pista: "Es roja"},
+    {fruta: "PIÑA", pista: "Tambien es como se le dice a una trompada"}
 ] //diccionario
 
 export default function Hangman() {
 
-    const word = "CABALLO"; // palabra que va a aparecer 
+    const [word, setWord] = useState(""); // palabra que va a aparecer 
+    const [pista, setPista] = useState("");
 
     const alphabets = ["A", "B", "C", "D", "E", "F", "G",
         "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R",
@@ -36,8 +37,16 @@ export default function Hangman() {
 
     const [wrongLetter, setWrongLetter] = useState (0); //Contador de letras incorrectas, este se encarga de guardar cuantos errores se cometieron
     
-    let trollface = "./img/0.png"//El ahorcado
+    
+    const reinicioTurno = () => {
+        const palabra = palabras[Math.floor(Math.random() * palabras.length)]
+        setWord(palabra.fruta)
+        setPista(palabra.pista)
+        setCorrectGuesses([])
+        setWrongLetter(0)
+    }
 
+    let trollface = "./img/0.png"//El ahorcado
     if (wrongLetter === 1) trollface="./img/1.png"
     if (wrongLetter === 2) trollface="./img/2.png"
     if (wrongLetter === 3) trollface="./img/3.png"
@@ -49,6 +58,7 @@ export default function Hangman() {
     
 
     return  <div>
+            <button onClick={reinicioTurno}>Jugar</button>
             <div>
                 <p>Errores: {wrongLetter}/6</p> 
                 <img src={trollface} alt='' />
@@ -69,12 +79,14 @@ export default function Hangman() {
             }
             <h1>
             {
-                !maskedWord.includes("_")  ? "GANASTE EA EA EA" : "" //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
+                !maskedWord.includes("_")  ? "Precione el boton JUGAR para general una palabra aleatoria." : "" //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
             }
-            </h1>
+            </h1>{
+                wrongLetter < 6 ? "Ayuda: " +pista : ""
+            }
             <h1>
             {
-                wrongLetter > 5 ? "Has perdido kpo, ahora embargaremos tu casa" : "" //En caso de que el juego haya terminado y no hayas ganado aparecera el texto de derrota
+                wrongLetter > 5 ? "La respuesta era: " + word : "" //En caso de que el juego haya terminado y no hayas ganado aparecera el texto de derrota
             }
             </h1>
             
