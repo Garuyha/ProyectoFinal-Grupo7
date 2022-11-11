@@ -31,18 +31,30 @@ export function Juego(){
             derrota: "papel",
             imgJugador: tijeraJugador,
             imgMaquina: tijeraMaquina
-        }
+        },
+       /* {
+            elección: "Esperando",
+            imgMaquina: ""
+        }*/
     ]
 
     const elegirOpcion = (event) =>{
+        reinicioTurno()
         const jugador = opciones.find(e=>e.eleccion === event.target.textContent);
         setEleccionJugador(jugador);
-        eleccionRival();
+        setTimeout(() => eleccionRival(), 1000);
     }
 
     const eleccionRival = () =>{
         const eleccion = opciones[Math.floor(Math.random()*opciones.length)];
         setEleccionMaquina(eleccion);
+    }
+
+    const reinicioTurno = () => {
+        setEleccionJugador({})
+        setEleccionMaquina({})
+        //setTurnos(antTurno => antTurno+1)
+        //setDesabilitada(false)
     }
 
     return(
