@@ -126,7 +126,7 @@ export default function Hangman() {
               <button
                 key={index}
                 onClick={() => {
-                  if (wrongLetter < 6) {
+                  if (wrongLetter < 6 && maskedWord.includes("_")) {
                     // el if indica que las teclas serán detectadas solo en caso de que este dentro del margen de intentos, si los intentos fallidos llegan a 6 ya no las detectará y terminará el juego
                     if (word.includes(alphabet)) {
                       setCorrectGuesses([...correctGuesses, alphabet]);
