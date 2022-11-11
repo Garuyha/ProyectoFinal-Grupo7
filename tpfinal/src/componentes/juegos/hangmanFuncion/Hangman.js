@@ -25,7 +25,7 @@ const palabras = [
 
 export default function Hangman() {
 
-    const [word, setWord] = useState(""); // palabra que va a aparecer 
+    const [word, setWord] = useState("a"); // palabra que va a aparecer 
     const [pista, setPista] = useState("");
 
     const alphabets = ["A", "B", "C", "D", "E", "F", "G",
@@ -60,15 +60,14 @@ export default function Hangman() {
     
 
     return  <div className='fondojuegohangman'>
-            <div>
-                <p className='contadorhangman'>Errores: {wrongLetter}/6</p> 
-                <img src={trollface} alt='' className='trollasio'/>
-            </div>
+            
+            <p className='contadorhangman'>Errores: {wrongLetter}/6</p> 
             <div className='textohangman'>
             {
-                !maskedWord.includes("_")  ? "¡VICTORIA!" : "Presione el boton para generar una palabra aleatoria." //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
+                !maskedWord.includes("_")  ? "VICTORIA" : "Presione el boton para generar una palabra aleatoria." //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
             }
             </div>
+            <img src={trollface} alt='' className='trollasio'/>
             <p className='palabrahangman'>{maskedWord}</p>
             <div className='tecladohangman'>
                 <div className='containerteclado'>

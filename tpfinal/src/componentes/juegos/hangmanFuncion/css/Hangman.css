@@ -17,7 +17,8 @@
 
 .palabrahangman{
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
+    font-family: Papernote;
 }
 
 .tecladohangman{
@@ -29,6 +30,7 @@
     font-size: 40px;
     text-align: center;
     color: #393E46;
+    margin: 40px;
 }
 
 .botonhangman{
@@ -68,5 +70,9 @@
 
 @font-face{
     font-family: Bouncy-Thin;
-    src: url('../fuentes/Bouncy-Thin-PERSONAL_USE_ONLY_1.ttf');
+    src: url('../fuenteshangman/Bouncy-Thin-PERSONAL_USE_ONLY_1.ttf');
+}
+@font-face{
+    font-family: Papernote;
+    src: url('../fuenteshangman/Papernotes\ Sketch.ttf');
 }
