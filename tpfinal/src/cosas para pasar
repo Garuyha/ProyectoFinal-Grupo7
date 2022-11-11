@@ -1,0 +1,66 @@
+// //pasher//
+// import Phaser from 'phaser';
+// import Juego from './componenteJuego/JuegoHenry.js';
+// import { useEffect, useState } from 'react';
+// function App() {
+//   const[ listo,setListo  ]= useState(false);
+   
+// useEffect( () =>{
+
+// const config= {
+// type: Phaser.AUTO,
+// width:1300,                            
+// height:750,                            
+// scene:[Juego],     
+// physics: {
+// default: 'arcade',
+// arcade: {                               
+// debug: false
+
+// }
+
+// }
+
+// };
+
+// const game = new Phaser.Game(config);
+// game.events.on("LISTO", setListo)
+
+// return() =>{
+
+// setListo(false);
+// game.destroy(true);
+
+// }
+// }, [listo]);
+
+// }
+
+// export default App;
+
+// //------------------------------------------------------------//
+// //App normal//
+// import Header from './componentes/Header'
+// import { Routes, Route } from "react-router-dom";
+// import Inicio from './componentes/Inicio';
+// import Prueba from './componentes/Prueba';
+// import Desarrollador from './componentes/Desarrollador'
+// import Juego from './componentes/juegos/PiedraPapelTijera/Juego'
+// import Hangman from './componentes/juegos/Hangman/Hangman'
+
+// function App() {
+//   return (
+//     <div>
+//       <Header/>
+//       <Routes>
+//         <Route path="/" element={<Inicio />} />
+//         <Route path='/menureact' element={<Prueba/>}/>
+//         <Route path='/desarrollador' element={<Desarrollador />}/>
+//         <Route path= '/juegoppt' element={<Juego/>}/>
+//         <Route path= '/juegoahorcadito' element={<Hangman/>}/>
+//       </Routes>
+//     </div>
+//   );
+// }
+
+// export default App;
