@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "tpfinal",
   "version": "0.1.0",
   "private": true,
@@ -38,10 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-=======
-  "dependencies": {
-    "howler": "^2.2.3",
-    "phaser": "^3.55.2"
->>>>>>> main
   }
 }
