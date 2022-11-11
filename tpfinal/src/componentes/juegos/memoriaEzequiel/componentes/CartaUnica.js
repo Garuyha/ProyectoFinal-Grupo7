@@ -1,14 +1,23 @@
 import "../cssEzequiel/CartaUnica.css"
+import {Howl, Howler} from "howler"
 
 export default function CartaUnica({carta, resolverEleccion, volteada, desabilitada}){
     
     const resolverClick = () => {
         if(!desabilitada){
-            resolverEleccion(carta)
+            resolverEleccion(carta)           
+            SoundPlay(carta.sonido)
         }
     }
     
+    const SoundPlay = (src) =>{
+        const sound = new Howl({
+            src
+        })
+        sound.play();
+    }
     
+    Howler.volume(0.5)
     return(
         <div className = "carta">
             <div className ={volteada ? "volteada" : "noVolteada"}>
