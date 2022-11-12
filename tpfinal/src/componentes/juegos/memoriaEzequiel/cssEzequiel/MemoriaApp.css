@@ -2,10 +2,11 @@
     max-width: 860px;
     margin: 40px auto;
     min-height: 100%;
+    background: url();
 }
     button{
         background: nome;
-        border: 2px solid rgb(255, 0, 0);
+        border: 2px solid whitesmoke;
         padding: 6px 12px;
         border-radius: 4px;
         color: rgb(0, 0, 0);
@@ -14,7 +15,7 @@
         font-size: 1em;
     }
     button:hover{
-        background: #ff00dd;
+        background: rgb(93, 68, 130);
         color: #fff;
     }
 
