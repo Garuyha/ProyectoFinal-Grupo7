@@ -5,10 +5,7 @@ class Juego extends Phaser.Scene{
     cursors = null;
     platforms = null;
     player = null;
-    manzanas = null;
-    ananas = null;
-    bananas = null;
-    naranjas = null
+    grupo = null;
     score = null;
     scoreText = null;
 
@@ -21,7 +18,7 @@ super('Juego');
 // Se precargan las imagenes y los sonidos del juego desde su directorio
 
 preload(){
-    this.load.image('fondo','./imgHenry/fondo.png');
+    this.load.image('fondo','./imgHenry/fondoNivel2HungryAnt.png');
     this.load.image('largoCostado','./imgHenry/ParedCostadoLargo.png');
     this.load.image('largoParado','./imgHenry/ParedParadoLargo.png');
     this.load.image('cortoCostado','./imgHenry/ParedCostadoCorto.png');
@@ -37,12 +34,11 @@ preload(){
     this.load.image('durazno','./imgHenry/durazno.png');
     this.load.image('limon','./imgHenry/limon.png');
     this.load.image('sandia','./imgHenry/sandia.png');
-    this.load.image('personaje','./imgHenry/pelota.png');
+    this.load.spritesheet('personaje','./imgHenry/hormigaChina.png', {frameWidth:32, frameHeight:32});
     
 }
 
 //  Se crean las imagenes y sonidos
-
 create(){
 //creando el fondo
   this.add.image(650,370,'fondo');
@@ -87,167 +83,131 @@ create(){
   this.platforms.create(90,780,'especial');
   this.platforms.create(712.5,755,'largoCostado');
   this.platforms.create(400,755,'especialCostado');
-  this.platforms.create(1000,755,'especialCostado');
-
-  
-
-
-    
+  this.platforms.create(1000,755,'especialCostado'); 
 
 //player asignado con sprite
-  this.player = this.physics.add.sprite(5,105, 'personaje') //5,105
+  this.player = this.physics.add.sprite(20,105, 'personaje') //5,105
   this.player.setCollideWorldBounds(true);
 
-    
+//se crean los mivimientosque seran utilizados en update
+  this.anims.create({
+    key: 'left',
+    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
+  })
+
+  this.anims.create({
+    key: 'right',
+    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
+  })
+
+  this.anims.create({
+    key: 'up',
+    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
+  })
+
+  this.anims.create({
+    key: 'down',
+    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
+  })
+  
+//posicionamiento de las objetos a ser consumidos por el personaje
+  this.grupo = this.physics.add.staticGroup();   
 
 //agregando las manzanas
-  this.manzanas = this.physics.add.staticGroup({
-    key: 'manzana',
-    frameQuantity: 11,
-    gridAlign: {
-      width: 13, 
-      height: 156, 
-      cellWidth: 110, 
-      cellHeight: 150, 
-      x: 200, 
-      y: 162,   
-    } 
-  });      
+  this.grupo.create(650, 104, 'manzana');
+  this.grupo.create(750, 104, 'manzana');
+  this.grupo.create(850, 104, 'manzana');
+  this.grupo.create(950, 104, 'manzana');
+  this.grupo.create(1050, 104, 'manzana');
+  this.grupo.create(1150, 104, 'manzana');
+  this.grupo.create(1250, 104, 'manzana'); 
 
-//agregando las ananas  
-  this.ananas = this.physics.add.staticGroup({
-    key: 'anana',
-    frameQuantity: 5,
-    gridAlign: {
-      width: 1, 
-      height: 156, 
-      cellWidth: 100, 
-      cellHeight: 60, 
-      x: 720, 
-      y: 270,   
-    } 
-  });
-
+// //agregando las ananas  
+  this.grupo.create(686, 255, 'anana');
+  this.grupo.create(686, 315, 'anana');
+  this.grupo.create(686, 375, 'anana');
+  this.grupo.create(686, 435, 'anana');
+  this.grupo.create(686, 495, 'anana');
+  
 //agregando las bananas
-  this.bananas = this.physics.add.staticGroup({
-    key: 'banana',
-    frameQuantity: 6,
-    gridAlign: {
-      width: 3, 
-      height: 156, 
-      cellWidth: 60, 
-      cellHeight: 100, 
-      x: 930, 
-      y: 438,   
-    } 
-    
-  });
+  this.grupo.create(915, 405, 'banana');
+  this.grupo.create(915, 505, 'banana');
+  this.grupo.create(975, 405, 'banana');
+  this.grupo.create(975, 505, 'banana');
+  this.grupo.create(1035, 405, 'banana');
+  this.grupo.create(1035, 505, 'banana');
 
-//agregando las naranjas
-  this.naranjas = this.physics.add.staticGroup({
-    key: 'naranja',
-    frameQuantity: 3,
-    gridAlign: {
-      width: 13, 
-      height: 156, 
-      cellWidth: 408, 
-      cellHeight: 80, 
-      x: 645, 
-      y: 225,   
-    } 
-  });
+// //agregando las naranjas
+  this.grupo.create(452, 201.5, 'naranja');
+  this.grupo.create(565, 503, 'naranja');
+  this.grupo.create(820, 503, 'naranja');
+  this.grupo.create(820, 305, 'naranja');
+  this.grupo.create(1280, 305, 'naranja');
+  this.grupo.create(1280, 201.5, 'naranja');
+  this.grupo.create(1218, 600, 'naranja');
+
 
 //agregando las uvas 
-  this.uvas = this.physics.add.staticGroup({
-    key: 'uva',
-    frameQuantity: 14,
-    gridAlign: {
-      width: 7, 
-      height: 2, 
-      cellWidth: 55, 
-      cellHeight: 100, 
-      x: 33, 
-      y: 235,   
-    } 
-  });
+  this.grupo.create(22, 200, 'uva');
+  this.grupo.create(22, 300, 'uva');
+  this.grupo.create(80, 200, 'uva');
+  this.grupo.create(80, 300, 'uva');
+  this.grupo.create(140, 200, 'uva');
+  this.grupo.create(140, 300, 'uva');
 
 //agregando las ciruelas
-  this.ciruelas = this.physics.add.staticGroup({
-    key: 'ciruela',
-    frameQuantity: 7,
-    gridAlign: {
-      width: 13, 
-      height: 156, 
-      cellWidth: 55, 
-      cellHeight: 80, 
-      x: 33, 
-      y: 435,   
-    } 
-  });
+  this.grupo.create(22, 410, 'ciruela');
+  this.grupo.create(77, 410, 'ciruela');
+  this.grupo.create(132, 410, 'ciruela');
+  this.grupo.create(187, 410, 'ciruela');
+  this.grupo.create(242, 410, 'ciruela');
+  this.grupo.create(297, 410, 'ciruela');
   
 //agregando los duraznos
-  this.duraznos = this.physics.add.staticGroup({
-    key: 'durazno',
-    frameQuantity: 9,
-    gridAlign: {
-      width: 3, 
-      height: 156, 
-      cellWidth: 85, 
-      cellHeight: 95, 
-      x: 60, 
-      y: 545,   
-    } 
-  });
-
-//agregando los limones
-  this.limones = this.physics.add.staticGroup({
-    key: 'limon',
-    frameQuantity: 24,
-    gridAlign: {
-      width: 12, 
-      height: 156, 
-      cellWidth: 55, 
-      cellHeight: 95, 
-      x: 450, 
-      y: 640,   
-    } 
-  });
+  this.grupo.create(34, 735, 'durazno');
+  this.grupo.create(150, 735, 'durazno');
+  this.grupo.create(255, 735, 'durazno');
+  this.grupo.create(25, 610, 'durazno');
+  this.grupo.create(110, 610, 'durazno');
+  this.grupo.create(195, 610, 'durazno');
+  this.grupo.create(255, 513, 'durazno');
+  this.grupo.create(155, 513, 'durazno');
+  this.grupo.create(55, 513, 'durazno');
 
 //agregando las sandias
-  this.sandias = this.physics.add.staticGroup({
-    key: 'sandia',
-    frameQuantity: 9,
-    gridAlign: {
-      width: 3, 
-      height: 156, 
-      cellWidth: 85, 
-      cellHeight: 95, 
-      x: 100, 
-      y: 545,   
-    } 
-  });
+  this.grupo.create(105, 513, 'sandia');
+  this.grupo.create(205, 513, 'sandia');
+  this.grupo.create(152, 610, 'sandia');
+  this.grupo.create(65, 610, 'sandia');
+  this.grupo.create(90, 705, 'sandia');
+  this.grupo.create(208, 705, 'sandia');
 
-  
- 
-  
+//agregando los limones
+  this.grupo.create(460, 600, 'limon');
+  this.grupo.create(460, 705, 'limon');
+  this.grupo.create(540, 600, 'limon');
+  this.grupo.create(540, 705, 'limon');
+  this.grupo.create(620, 600, 'limon');
+  this.grupo.create(620, 705, 'limon');
+  this.grupo.create(700, 600, 'limon');
+  this.grupo.create(700, 705, 'limon');
+  this.grupo.create(780, 600, 'limon');
+  this.grupo.create(780, 705, 'limon');
+  this.grupo.create(860, 600, 'limon');
+  this.grupo.create(860, 705, 'limon');
+  this.grupo.create(940, 600, 'limon');
+  this.grupo.create(940, 705, 'limon');
+  this.grupo.create(1020, 600, 'limon');
+  this.grupo.create(1020, 705, 'limon');
 
+//colision jugador contra las plataformas
+  this.physics.add.collider(this.player, this.platforms, this.paredColision, null, this); 
 
-//colision contra las plataformas
-  this.physics.add.collider(this.player, this.platforms, this.paredColision, null, this);    
+//colision jugador contra grupo (frutas y verduras)
+  this.physics.add.collider(this.player, this.grupo, this.frutaColision, null, this); 
 
-//Creacion de cursores
+//Creacion de cursores para jugador
   this.cursors = this.input.keyboard.createCursorKeys();
-
-//choque de las comidas con el jugador 
-  this.physics.add.overlap(this.player, this.manzanas, this.manzanaColision, null, this);
-  this.physics.add.overlap(this.player, this.ananas, this.ananaColision, null, this);
-  this.physics.add.overlap(this.player, this.bananas, this.bananaColision, null, this);
-  this.physics.add.overlap(this.player, this.naranjas, this.naranjaColision, null, this);
-  this.physics.add.overlap(this.player, this.uvas, this.uvaColision, null, this);
-  this.physics.add.overlap(this.player, this.ciruelas, this.ciruelaColision, null, this);
-  this.physics.add.overlap(this.player, this.duraznos, this.duraznoColision, null, this);
-  this.physics.add.overlap(this.player, this.limones, this.limonColision, null, this);
-  this.physics.add.overlap(this.player, this.sandias, this.sandiaColision, null, this);
 
 //texto de puntaje
   this.scoreText = this.add.text(13, 10, 'score: 0', { fontSize: '32px', fill: '#FF0606' });
@@ -261,87 +221,48 @@ update(){
   if (this.cursors.left.isDown)
   {
     this.player.setVelocityX(-145);
-    this.player.setVelocityY(0); 
+    this.player.setVelocityY(0);
+    this.player.anims.play('left', true); 
+  
    
   }
   else if (this.cursors.right.isDown)
   {
     this.player.setVelocityX(145);
     this.player.setVelocityY(0);
-  
+    this.player.anims.play('right', true);
+ 
       
   }else if (this.cursors.up.isDown)
   {
     this.player.setVelocityY(-145);
     this.player.setVelocityX(0);
+    this.player.anims.play('up', true);
+ 
   }
   else if (this.cursors.down.isDown)
 {
   this.player.setVelocityY(145);
-  this.player.setVelocityX(0);
+  this.player.setVelocityX(0); 
+  this.player.anims.play('down', true);
 }
 
 }
 
-manzanaColision(player,manzanas) {    
-  manzanas.disableBody(true, true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 15;
-  this.scoreText.setText('Score: ' + this.score)
+frutaColision(player, grupo){
+  grupo.disableBody(true,true);
+  this.score++;
+  this.scoreText.setText('SCORE: ' + this.score);
+  //this.comidaSound.play
 }
-
-ananaColision(player,ananas){
-  ananas.disableBody(true, true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 50;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-bananaColision(player,bananas){
-  bananas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen           
-  this.score += 45;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-naranjaColision(player,naranjas){
-  naranjas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 60;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-uvaColision(player,uvas){
-  uvas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 30;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-ciruelaColision(player,ciruelas){
-  ciruelas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 20;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-duraznoColision(player,duraznos){
-  duraznos.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 35;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-limonColision(player,limones){
-  limones.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 10;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
-sandiaColision(player,sandias){
-  sandias.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 35;
-  this.scoreText.setText('Score: ' + this.score)
-}
-
 paredColision() {
   this.golpeSound.play()
   this.mostrarGameOver();
 }
 
+// mostrarGameOver(){
+//   this.scene.start('GameOver')
+// }
 }
 
 export default Juego;
