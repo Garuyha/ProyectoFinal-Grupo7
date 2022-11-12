@@ -47,6 +47,20 @@
     background: rgb(220,220,220);
 }
 
+@media (max-width:1170px){
+    .cajajuego{
+        display: inline-block;
+        text-align: center;
+    }
+    .caja{
+        text-align: center;
+    }
+    .imagenjuego{
+        margin:  0px;
+    }
+    
+}
+
 @font-face{
     font-family: LEMON MILK-Light;
     src: url('../fuentes/LEMONMILK-Light.ttf');

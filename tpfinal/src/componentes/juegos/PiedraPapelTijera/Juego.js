@@ -60,9 +60,11 @@ export function Juego(){
     return(
         <Fragment>
             <div className = "contenedorppt">            
-                <h2 className = "resultado">
+            <div className = "resultado">
+                <h2>
                     <Resultado jugador={eleccionJugador} maquina={eleccionMaquina}/>                             
-                </h2>            
+                </h2>   
+            </div>         
                 <main className="tarjetaContenedor">
                     <section className="tarjetaJugador">
                         <div className="jugador">Jugador</div>
