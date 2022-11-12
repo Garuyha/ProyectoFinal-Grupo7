@@ -2,38 +2,48 @@ import Phaser from "phaser";
 
 class Juego extends Phaser.Scene{
 
-    cursors = null;
-    platforms = null;
-    player = null;
-    grupo = null;
-    score = null;
-    scoreText = null;
+  cursors = null;
+  platforms = null;
+  player = null;
+  grupo = null;
+  score = null;
+  scoreText = null;
 
 constructor(){
 // Constructor que almacenara un key o identificador de la escena, se encarga de enviar los parametros
-super('Juego');      
-
+  super('Juego');      
 }
 
 // Se precargan las imagenes y los sonidos del juego desde su directorio
 preload(){
-    this.load.image('fondo','./imgHenry/fondoNivel2HungryAnt.png');
-    this.load.image('largoCostado','./imgHenry/ParedCostadoLargo.png');
-    this.load.image('largoParado','./imgHenry/ParedParadoLargo.png');
-    this.load.image('cortoCostado','./imgHenry/ParedCostadoCorto.png');
-    this.load.image('cortoParado','./imgHenry/ParedParadoCorto.png');
-    this.load.image('especialCostado','./imgHenry/EspecialCostado.png');
-    this.load.image('especial','./imgHenry/Especial.png');
-    this.load.image('manzana','./imgHenry/manzana.png');
-    this.load.image('anana','./imgHenry/anana.png');
-    this.load.image('banana','./imgHenry/banana.png');
-    this.load.image('naranja','./imgHenry/naranja.png');
-    this.load.image('uva','./imgHenry/uva.png');
-    this.load.image('ciruela','./imgHenry/ciruela.png');
-    this.load.image('durazno','./imgHenry/durazno.png');
-    this.load.image('limon','./imgHenry/limon.png');
-    this.load.image('sandia','./imgHenry/sandia.png');
-    this.load.image('personaje','./imgHenry/hormiga.png');
+
+//imagenes
+  this.load.image('fondo','./imgHenry/fondoNivel2HungryAnt.png');
+  this.load.image('largoCostado','./imgHenry/ParedCostadoLargo.png');
+  this.load.image('largoParado','./imgHenry/ParedParadoLargo.png');
+  this.load.image('cortoCostado','./imgHenry/ParedCostadoCorto.png');
+  this.load.image('cortoParado','./imgHenry/ParedParadoCorto.png');
+  this.load.image('especialCostado','./imgHenry/EspecialCostado.png');
+  this.load.image('especial','./imgHenry/Especial.png');
+  this.load.image('manzana','./imgHenry/manzana.png');
+  this.load.image('anana','./imgHenry/anana.png');
+  this.load.image('banana','./imgHenry/banana.png');
+  this.load.image('naranja','./imgHenry/naranja.png');
+  this.load.image('uva','./imgHenry/uva.png');
+  this.load.image('ciruela','./imgHenry/ciruela.png');
+  this.load.image('durazno','./imgHenry/durazno.png');
+  this.load.image('limon','./imgHenry/limon.png');
+  this.load.image('sandia','./imgHenry/sandia.png');
+  this.load.image('personaje','./imgHenry/hormiga.png');
+
+// Musica y sonidos//
+
+  // this.load.audio('comida', './musica/comida.mp3');
+  // this.load.audio('golpe', './musica/golpe.mp3');
+  // this.load.audio('score', './musica/score.mp3');
+  // this.load.audio('pou', './musica/pou.mp3');
+  // this.load.audio('ninios', './musica/ninios.mp3');
+  // this.load.audio('sonidovictoria', './musica/sonidovictoria.mp3');
     
 }
 
@@ -43,12 +53,12 @@ create(){
 //creando el fondo
   this.add.image(650,370,'fondo');
 
-//creando las plataformas
+//creando las plataformas y estos permanecen estaticos.
   this.platforms = this.physics.add.staticGroup();
  
-  this.platforms.create(326,55,'largoCostado'); //plataformas que separan el juego del lugar de score
+  this.platforms.create(326,55,'largoCostado'); 
   this.platforms.create(975,55,'largoCostado'); 
-  this.platforms.create(158,155,'cortoCostado');// plataformas de la misma fila cordenada Y (155)
+  this.platforms.create(158,155,'cortoCostado');
   this.platforms.create(550,155,'cortoCostado');
   this.platforms.create(1110,155,'largoCostado'); 
   this.platforms.create(407.5,362.5,'largoParado');
@@ -56,16 +66,16 @@ create(){
   this.platforms.create(615,323.5,'cortoParado'); 
   this.platforms.create(760,383.5,'cortoParado');
   this.platforms.create(615,383.5,'cortoParado'); 
-  this.platforms.create(390,250,'especialCostado');//plataformas de la misma fila cordenada Y (250) 
+  this.platforms.create(390,250,'especialCostado');
   this.platforms.create(0,250,'cortoCostado')
   this.platforms.create(942.6,250,'cortoCostado');
   this.platforms.create(1300,250,'especialCostado');
   this.platforms.create(1278,522.5,'largoParado');
   this.platforms.create(1278,700,'especial');
-  this.platforms.create(0,355,'largoCostado');//plataformas de la misma fila cordenada Y (355)
+  this.platforms.create(0,355,'largoCostado');
   this.platforms.create(1015,355,'cortoCostado');
   this.platforms.create(872.5,468.9,'cortoParado');
-  this.platforms.create(1015,455,'cortoCostado');//plataformas de la misma fila cordenada Y (455)
+  this.platforms.create(1015,455,'cortoCostado');
   this.platforms.create(852.5,550,'largoCostado');
   this.platforms.create(513.5,476.5,'cortoParado');
   this.platforms.create(712.5,650,'largoCostado');
@@ -74,7 +84,7 @@ create(){
   this.platforms.create(1198.5,723.5,'cortoParado');
   this.platforms.create(1238.5,723.5,'cortoParado');
   this.platforms.create(305,630,'largoParado');
-  this.platforms.create(65,660,'cortoCostado'); // izquierda abajo
+  this.platforms.create(65,660,'cortoCostado'); 
   this.platforms.create(171,462.5,'especialCostado');
   this.platforms.create(112.5,560,'especialCostado');
   this.platforms.create(513.5,390,'especial');
@@ -85,12 +95,12 @@ create(){
   this.platforms.create(400,755,'especialCostado');
   this.platforms.create(1000,755,'especialCostado'); 
 
-//player asignado con sprite
+//player asignado
   this.player = this.physics.add.image(20,105, 'personaje').setImmovable(); // La variable y palabra reservada jugador se encarga de guardar a la imagen del jugador con su posicion en la pantalla, ademas se la establece como  Inamovible es decir permancera quieta amenos que se produzca un movimiento.
   this.player.setCollideWorldBounds(true); // Impide que el jugador se salga del rango de la pantalla, este choca con los bordes.
   this.cursors = this.input.keyboard.createCursorKeys();//Creacion de cursores para jugador
 
-//posicionamiento de las objetos a ser consumidos por el personaje
+//// Se añade fisicas a los objetos frutas y estos permanecen estaticos.
   this.grupo = this.physics.add.staticGroup();   
 
 //agregando las manzanas
@@ -183,11 +193,16 @@ create(){
 //colision jugador contra las plataformas
   this.physics.add.collider(this.player, this.platforms, this.paredColision, null, this); 
 
-//colision jugador contra grupo (frutas y verduras)
+//choque de las frutas y verdura con el jugador 
   this.physics.add.overlap(this.player, this.grupo, this.frutaColision, null, this); 
 
 //Creacion de la musica y sonido
-
+  // this.comidaSound = this.sound.add('comida');
+  // this.golpeSound = this.sound.add('golpe');
+  // this.scoreSound = this.sound.add('score');
+  // this.pouSound = this.sound.add('pou');
+  // this.niniosSound = this.sound.add('ninios');
+  // this.victoriaSound = this.sound.add('sonidovictoria');
 
 //texto de puntaje
   this.scoreText = this.add.text(13, 10, 'score: 0', { fontSize: '32px', fill: '#FF0606' });
@@ -197,61 +212,67 @@ create(){
 update(){
 
 // Movimientos segun el cursor del teclado
-  if (this.cursors.left.isDown)
+  if (this.cursors.left.isDown) // Si se presiona la tecla "izquierda" :
   {
-    this.player.setVelocityX(-145);
-    this.player.setVelocityY(0);
-    this.player.flipX = true;                  // Gira la imagen del jugador 300 unidades en X hacia la izquierda (la serpiente mira hacia la izquierda).
+    this.player.setVelocityX(-145); // El jugador se desplaza a 145 unidades en X hacia la izquierda.
+    this.player.setVelocityY(0);  // El desplazamiento en Y se anula en cero, de lo contrario se produce un movimiento hacia la izquierda y en diagonal.
+    this.player.flipX = true;    // Gira la imagen del jugador 300 unidades en X hacia la izquierda (la serpiente mira hacia la izquierda).
     this.player.rotation = 300;
   }
-  else if (this.cursors.right.isDown)
+  else if (this.cursors.right.isDown)  // El desplazamiento en Y se anula en cero, de lo contrario se produce un movimiento hacia la izquierda y en diagonal.
   {
-    this.player.setVelocityX(145);
-    this.player.setVelocityY(0);
-    this.player.rotation = -300;    
+    this.player.setVelocityX(145);   // El jugador se desplaza a 145 unidades en X hacia la derecha.
+    this.player.setVelocityY(0);  //  El desplazamiento en Y se anula en cero, de lo contrario se produce un movimiento hacia la derecha y en diagonal.
+    this.player.rotation = -300;     // Gira la imagen del jugador -300 unidades en X hacia la derecha (la serpiente mira hacia la derecha).
   }
-  else if (this.cursors.up.isDown)
+  else if (this.cursors.up.isDown)   // Si se presiona la tecla "arriba" :
   {
-    this.player.setVelocityY(-145);
-    this.player.setVelocityX(0);
-    this.player.rotation = 0;
+    this.player.setVelocityY(-145);   // El jugador se desplaza a -145 unidades en Y hacia arriba.
+    this.player.setVelocityX(0);    //  El desplazamiento en X se anula en cero, de lo contrario se produce un movimiento hacia arriba y en diagonal.
+    this.player.rotation = 0;       // Como la imagen inicial de la serpiente (Jugador) mira hacia arriba, se establece la rotacion en 0 de esta forma devuelve a la posicion incial cuando se presione la tecla arriba.
   }
-  else if (this.cursors.down.isDown)
+  else if (this.cursors.down.isDown)   // Si se presiona la tecla "abajo" :
   {
-    this.player.setVelocityY(145);
-    this.player.setVelocityX(0); 
-    this.player.rotation = 600; 
+    this.player.setVelocityY(145);    // El jugador se desplaza a -145 unidades en Y hacia abajo.
+    this.player.setVelocityX(0);    //  El desplazamiento en X se anula en cero, de lo contrario se produce un movimiento hacia abajo y en diagonal.
+    this.player.rotation = 600;     // Gira la imagen de la serpiente 600 unidades en Y es decir  hacia abajo (la serpiente mira hacia  abajo cuando presionamos la tecla abajo).
   }
 
 }
 
-frutaColision(player, grupo){
-  grupo.disableBody(true,true);
-  this.score++;
-  this.scoreText.setText('SCORE: ' + this.score);
-  //this.comidaSound.play
-  //this.scoreSound.play()
-  // if (this.grupo.countActive() === 0)
-  // {
-  //   this,mostrarPantallaVictoria();
-  // }
+  frutaColision(player, grupo){
+    grupo.disableBody(true,true);     // Si se produce una colision entre el objeto player y el grupo , estos ultimos se destruyen.
+    this.score++;
+    this.scoreText.setText('SCORE: ' + this.score);
+    //this.comidaSound.play
+    //this.scoreSound.play()
+    // if (this.grupo.countActive() === 0)   //si el grupo llega a 0  se cambia a la escena de pantalla de Victoria  
+    // {
+    //   this,mostrarPantallaVictoria();  // Se invoca el metodo que cambiara a la escena nivel dos.
+    // }
 }
 
-paredColision() {
-  this.golpeSound.play()
-  this.mostrarGameOver();
-}
+// Metodo para la colision del jugador y las paredes 
+  paredColision() {
+    this.golpeSound.play()   // Si el jugador colisiona con alguna de las paredes del mapa del juego, se pierde y se muestra la escena Game Over
+    this.mostrarGameOver();   // Se invoca el metodo que cambiara a la escena Game Over.
+  }
 
-// mostrarGameOver(){
-//   this.scene.start('GameOver')
-// }
+//Metodo que muestra la pantalla o escena Game Over
+  //mostrarGameOver(){
+    //this.scene.start('GameOver')
+    //this.sound.pauseAll('musica1')    // Pausa la musica de el nivel 1
+    //this.golpeSound.play()          // Reproduce sonido.
+    //this.pouSound.play()            // Reproduce sonido.
+  //}
 
-// mostrarPantallaVictoria() {
-//   this.scene.start('Victoria');       // Inicia la escena Victoria          
-//   this.sound.pauseAll('musica1')      // Pausa la musica de el nivel 1
-//   this.niniosSound.play()             // Reproduce sonido.
-//   this.victoriaSound.play()           // Reproduce sonido.
-// }
+//Metodo que muestra la pantalla o escena de Victoria
+  //mostrarPantallaVictoria() {
+    //this.scene.start('Victoria');       // Inicia la escena Victoria          
+    //this.sound.pauseAll('musica1')      // Pausa la musica de el nivel 1
+    //this.niniosSound.play()             // Reproduce sonido.
+    //this.victoriaSound.play()           // Reproduce sonido.
+  //}
 
 }
 
