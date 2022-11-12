@@ -1,4 +1,5 @@
 import Header from "./componentes/Header";
+import Footer from "./componentes/Footer";
 import { Routes, Route } from "react-router-dom";
 import Inicio from "./componentes/Inicio";
 import MenuPhaser from "./componentes/MenuPhaser";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/juegoahorcadito" element={<Hangman />} />
         <Route path="/memoriaapp" element={<MemoriaApp />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
