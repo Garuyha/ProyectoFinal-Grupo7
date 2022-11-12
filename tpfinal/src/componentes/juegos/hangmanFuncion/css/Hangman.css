@@ -1,0 +1,94 @@
+.pistahangman{
+    font-size: 25px;
+    text-align: center;
+    font-family: Papernote;
+    color: #5f8172;
+}
+
+.trollasio{
+    width:  518px;
+    height: 308px;
+}
+
+.contadorhangman{
+    text-align: right;
+    margin-right: 40px;
+    font-size: 25px;
+    font-family: Papernote;
+    color: #5f8172;
+}
+
+.imagencontainerhangman{
+    text-align: center;
+}
+
+.palabrahangman{
+    text-align: center;
+    font-size: 35px;
+    font-family: Papernote;
+    color: #5f8172;
+}
+
+.tecladohangman{
+    text-align: center;
+}
+
+.textohangman{
+    font-family: Bouncy-Thin;
+    font-size: 40px;
+    text-align: center;
+    color: #6D9886;
+    margin: 45px;
+}
+
+.botonhangman{
+    text-align: center;
+    background: none;
+    color: #393E46;
+}
+
+.btnhangman{
+    border:none;
+    padding: 17px;
+    font-size: 18px;
+    font-family: Papernote;
+}
+
+.btnhangman:hover{
+    background-color: #6D9886;
+    color: #F7F7F7;
+    border: none;
+}
+
+.fondojuegohangman{
+    background: #ffffff;
+    border-radius: 4%;
+    margin: 80px;
+    padding: 40px 0px 40px 0px;
+}
+
+.tecladohangman{
+    margin: 0px 20px;
+}
+
+.botontecladohangman{
+    font-family: Papernote;
+    background-color: #F7F7F7;
+    padding: 15px;
+    border: none;
+}
+
+.botontecladohangman:hover{
+    padding: 15px;
+    background: #6D9886;
+    border: none;
+}
+
+@font-face{
+    font-family: Bouncy-Thin;
+    src: url('../fuenteshangman/Bouncy-Thin-PERSONAL_USE_ONLY_1.ttf');
+}
+@font-face{
+    font-family: Papernote;
+    src: url('../fuenteshangman/Papernotes\ Sketch.ttf');
+}
