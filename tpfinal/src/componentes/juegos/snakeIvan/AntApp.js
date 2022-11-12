@@ -7,6 +7,8 @@ import './AntApp.css';
 
 import NivelUno from './componentes/NivelUno';
 import { GameOver } from './componentes/GameOver';
+import { Menu } from './componentes/Menu';
+import { YouWin } from './componentes/Victoria';
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
             scale: {
 
             },                                          // Altura de la pantalla
-            scene: [Preloader, NivelUno, GameOver],
+            scene:  [ Menu, Preloader, NivelUno, GameOver,YouWin],
             physics: {                                          // se habilita las fisicas del juego.
                 default: 'arcade',
                 arcade: {
