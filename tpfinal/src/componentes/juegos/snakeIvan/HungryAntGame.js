@@ -1,4 +1,4 @@
-import './AntApp.css';
+import './HungryAntApp.css'
 import AntApp from './AntApp'
 
 export default function HungryAnt(){
