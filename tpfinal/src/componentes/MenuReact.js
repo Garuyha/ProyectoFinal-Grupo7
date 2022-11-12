@@ -8,7 +8,7 @@ function MenuReact() {
     <Fragment>
       {juegosreact.map((juegoreact) => {
         return (
-          <div className="caja">
+          <div className="caja" key = {juegoreact.id}>
             <div className="cajajuego">
               <div className="portadajuego">
                 <img
