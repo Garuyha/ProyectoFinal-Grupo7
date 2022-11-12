@@ -22,13 +22,9 @@ export class Menu extends Phaser.Scene {
     this.load.audio('musica1', './musica/musica1.mp3');
     this.load.audio('botonsonido', './musica/botonsonido.mp3');
     this.load.audio('botonsonido', './musica/botonsonido.mp3');
-
     // Precarga del boton jugar o start //
     this.BotonJugar.preload();
-
-
   }
-
 
   create() {
 

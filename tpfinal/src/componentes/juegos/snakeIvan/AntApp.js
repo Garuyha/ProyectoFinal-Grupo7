@@ -3,8 +3,6 @@ import Phaser from 'phaser';
 import { useEffect, useState } from 'react';
 import Preloader from './componentes/Preloader';
 import './AntApp.css';
-
-
 import NivelUno from './componentes/NivelUno';
 import { GameOver } from './componentes/GameOver';
 import { Menu } from './componentes/Menu';
@@ -20,12 +18,12 @@ function App() {
         const config = {
             type: Phaser.AUTO,
             width: 1300,                                            // Ancho de la pantalla
-            height: 700,
+            height: 700,                                            // Altura de la pantalla
             scale: {
 
-            },                                          // Altura de la pantalla
-            scene:  [ Menu, Preloader, NivelUno, GameOver,YouWin],
-            physics: {                                          // se habilita las fisicas del juego.
+            },                                          
+            scene: [Menu, Preloader, NivelUno, GameOver, YouWin],
+            physics: {                                             // Habilita las fisicas del juego.
                 default: 'arcade',
                 arcade: {
 
