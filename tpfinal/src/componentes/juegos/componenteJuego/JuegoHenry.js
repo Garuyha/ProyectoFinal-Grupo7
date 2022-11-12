@@ -16,7 +16,6 @@ super('Juego');
 }
 
 // Se precargan las imagenes y los sonidos del juego desde su directorio
-
 preload(){
     this.load.image('fondo','./imgHenry/fondoNivel2HungryAnt.png');
     this.load.image('largoCostado','./imgHenry/ParedCostadoLargo.png');
@@ -34,12 +33,13 @@ preload(){
     this.load.image('durazno','./imgHenry/durazno.png');
     this.load.image('limon','./imgHenry/limon.png');
     this.load.image('sandia','./imgHenry/sandia.png');
-    this.load.spritesheet('personaje','./imgHenry/hormigaChina.png', {frameWidth:32, frameHeight:32});
+    this.load.image('personaje','./imgHenry/hormiga.png');
     
 }
 
 //  Se crean las imagenes y sonidos
 create(){
+
 //creando el fondo
   this.add.image(650,370,'fondo');
 
@@ -86,30 +86,10 @@ create(){
   this.platforms.create(1000,755,'especialCostado'); 
 
 //player asignado con sprite
-  this.player = this.physics.add.sprite(20,105, 'personaje') //5,105
-  this.player.setCollideWorldBounds(true);
+  this.player = this.physics.add.image(20,105, 'personaje').setImmovable(); // La variable y palabra reservada jugador se encarga de guardar a la imagen del jugador con su posicion en la pantalla, ademas se la establece como  Inamovible es decir permancera quieta amenos que se produzca un movimiento.
+  this.player.setCollideWorldBounds(true); // Impide que el jugador se salga del rango de la pantalla, este choca con los bordes.
+  this.cursors = this.input.keyboard.createCursorKeys();//Creacion de cursores para jugador
 
-//se crean los mivimientosque seran utilizados en update
-  this.anims.create({
-    key: 'left',
-    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
-  })
-
-  this.anims.create({
-    key: 'right',
-    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
-  })
-
-  this.anims.create({
-    key: 'up',
-    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
-  })
-
-  this.anims.create({
-    key: 'down',
-    frames: this.anims.generateFrameNumbers('personaje',{ start:0, end: 1 })
-  })
-  
 //posicionamiento de las objetos a ser consumidos por el personaje
   this.grupo = this.physics.add.staticGroup();   
 
@@ -204,16 +184,15 @@ create(){
   this.physics.add.collider(this.player, this.platforms, this.paredColision, null, this); 
 
 //colision jugador contra grupo (frutas y verduras)
-  this.physics.add.collider(this.player, this.grupo, this.frutaColision, null, this); 
+  this.physics.add.overlap(this.player, this.grupo, this.frutaColision, null, this); 
 
-//Creacion de cursores para jugador
-  this.cursors = this.input.keyboard.createCursorKeys();
+//Creacion de la musica y sonido
+
 
 //texto de puntaje
   this.scoreText = this.add.text(13, 10, 'score: 0', { fontSize: '32px', fill: '#FF0606' });
 
 }
-
 
 update(){
 
@@ -222,30 +201,27 @@ update(){
   {
     this.player.setVelocityX(-145);
     this.player.setVelocityY(0);
-    this.player.anims.play('left', true); 
-  
-   
+    this.player.flipX = true;                  // Gira la imagen del jugador 300 unidades en X hacia la izquierda (la serpiente mira hacia la izquierda).
+    this.player.rotation = 300;
   }
   else if (this.cursors.right.isDown)
   {
     this.player.setVelocityX(145);
     this.player.setVelocityY(0);
-    this.player.anims.play('right', true);
- 
-      
-  }else if (this.cursors.up.isDown)
+    this.player.rotation = -300;    
+  }
+  else if (this.cursors.up.isDown)
   {
     this.player.setVelocityY(-145);
     this.player.setVelocityX(0);
-    this.player.anims.play('up', true);
- 
+    this.player.rotation = 0;
   }
   else if (this.cursors.down.isDown)
-{
-  this.player.setVelocityY(145);
-  this.player.setVelocityX(0); 
-  this.player.anims.play('down', true);
-}
+  {
+    this.player.setVelocityY(145);
+    this.player.setVelocityX(0); 
+    this.player.rotation = 600; 
+  }
 
 }
 
@@ -254,7 +230,13 @@ frutaColision(player, grupo){
   this.score++;
   this.scoreText.setText('SCORE: ' + this.score);
   //this.comidaSound.play
+  //this.scoreSound.play()
+  // if (this.grupo.countActive() === 0)
+  // {
+  //   this,mostrarPantallaVictoria();
+  // }
 }
+
 paredColision() {
   this.golpeSound.play()
   this.mostrarGameOver();
@@ -263,6 +245,14 @@ paredColision() {
 // mostrarGameOver(){
 //   this.scene.start('GameOver')
 // }
+
+// mostrarPantallaVictoria() {
+//   this.scene.start('Victoria');       // Inicia la escena Victoria          
+//   this.sound.pauseAll('musica1')      // Pausa la musica de el nivel 1
+//   this.niniosSound.play()             // Reproduce sonido.
+//   this.victoriaSound.play()           // Reproduce sonido.
+// }
+
 }
 
 export default Juego;
