@@ -80,7 +80,7 @@ export default function App(){
     
     return(
         <div className = "App">
-            <h1>Juego de memoria</h1>
+            <h1>TAROT MAGICO</h1>
             <button onClick={mezclarCartas}>Jugar</button>
 
             <div className="grilla-cartas">
