@@ -5,6 +5,7 @@
         "parrafouno":"¡Juega al clasico Arkanoid!.",
         "parrafodos":"Rompe todos los ladrillos que puedas en el clásico Arkanoid sin perder la bola de vista ni un solo momento. ",
         "parrafotres":"¡Consigue obtener la máxima puntuación!",
-        "linkto":"/juegoarkaoid"
+        "linkto":"/juegoarkaoid",
+        "id":"1"
     }
 ]

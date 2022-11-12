@@ -13,6 +13,7 @@
 
 .infojuego{
     font-family: Roboto-Thin;
+    text-align: left;
 }
 
 .sipnosis{
@@ -57,6 +58,9 @@
     }
     .imagenjuego{
         margin:  0px;
+    }
+    .infojuego{
+        text-align: center;
     }
     
 }
