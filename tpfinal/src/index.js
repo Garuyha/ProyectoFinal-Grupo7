@@ -4,13 +4,14 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import MemoriaApp from './componentes/juegos/memoriaEzequiel/MemoriaApp'
 import AntApp from './componentes/juegos/snakeIvan/AntApp'
+import AntHenryApp from './componentes/juegos/componenteJuego/AntHenryApp'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App/>
+        <AntHenryApp/>
       </BrowserRouter>
     </React.StrictMode>
 );

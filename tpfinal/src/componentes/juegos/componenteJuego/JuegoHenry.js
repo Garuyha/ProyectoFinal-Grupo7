@@ -65,6 +65,7 @@ create(){
   this.platforms.create(942.6,250,'cortoCostado');
   this.platforms.create(1300,250,'especialCostado');
   this.platforms.create(1278,522.5,'largoParado');
+  this.platforms.create(1278,700,'especial');
   this.platforms.create(0,355,'largoCostado');//plataformas de la misma fila cordenada Y (355)
   this.platforms.create(1015,355,'cortoCostado');
   this.platforms.create(872.5,468.9,'cortoParado');
@@ -72,8 +73,10 @@ create(){
   this.platforms.create(852.5,550,'largoCostado');
   this.platforms.create(513.5,476.5,'cortoParado');
   this.platforms.create(712.5,650,'largoCostado');
-  this.platforms.create(1157.5,723.5,'cortoParado');
-  this.platforms.create(1130.5,723.5,'cortoParado');
+  this.platforms.create(1160.5,723.5,'cortoParado');
+  this.platforms.create(1133.5,723.5,'cortoParado');
+  this.platforms.create(1198.5,723.5,'cortoParado');
+  this.platforms.create(1238.5,723.5,'cortoParado');
   this.platforms.create(305,630,'largoParado');
   this.platforms.create(65,660,'cortoCostado'); // izquierda abajo
   this.platforms.create(171,462.5,'especialCostado');
@@ -83,12 +86,16 @@ create(){
   this.platforms.create(207.5,780,'especial');
   this.platforms.create(90,780,'especial');
   this.platforms.create(712.5,755,'largoCostado');
+  this.platforms.create(400,755,'especialCostado');
+  this.platforms.create(1000,755,'especialCostado');
+
+  
 
 
     
 
 //player asignado con sprite
-  this.player = this.physics.add.sprite(5,100, 'personaje') //5,100
+  this.player = this.physics.add.sprite(5,105, 'personaje') //5,105
   this.player.setCollideWorldBounds(true);
 
     
@@ -143,9 +150,9 @@ create(){
     gridAlign: {
       width: 13, 
       height: 156, 
-      cellWidth: 65, 
+      cellWidth: 408, 
       cellHeight: 80, 
-      x: 835, 
+      x: 645, 
       y: 225,   
     } 
   });
@@ -226,7 +233,7 @@ create(){
 
 
 //colision contra las plataformas
-  this.physics.add.collider(this.player, this.platforms);    
+  this.physics.add.collider(this.player, this.platforms, this.paredColision, null, this);    
 
 //Creacion de cursores
   this.cursors = this.input.keyboard.createCursorKeys();
@@ -278,56 +285,61 @@ update(){
 
 manzanaColision(player,manzanas) {    
   manzanas.disableBody(true, true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 10;
+  this.score += 15;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 ananaColision(player,ananas){
   ananas.disableBody(true, true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 25;
+  this.score += 50;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 bananaColision(player,bananas){
   bananas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen           
-  this.score += 30;
+  this.score += 45;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 naranjaColision(player,naranjas){
   naranjas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 50;
+  this.score += 60;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 uvaColision(player,uvas){
   uvas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 60;
+  this.score += 30;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 ciruelaColision(player,ciruelas){
   ciruelas.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 80;
+  this.score += 20;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 duraznoColision(player,duraznos){
   duraznos.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 120;
+  this.score += 35;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 limonColision(player,limones){
   limones.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 1700;
+  this.score += 10;
   this.scoreText.setText('Score: ' + this.score)
 }
 
 sandiaColision(player,sandias){
   sandias.disableBody(true,true);                //colision entre player y los objetos comida donde estos desaparecen
-  this.score += 1700;
+  this.score += 35;
   this.scoreText.setText('Score: ' + this.score)
+}
+
+paredColision() {
+  this.golpeSound.play()
+  this.mostrarGameOver();
 }
 
 }
