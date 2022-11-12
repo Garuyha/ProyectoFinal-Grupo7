@@ -9,7 +9,7 @@ useEffect( () =>{
 const config= {
 type: Phaser.AUTO,
 width:1300,                            
-height:750,                            
+height:700,                            
 scene:[Juego],     
 physics: {
 default: 'arcade',

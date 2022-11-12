@@ -79,6 +79,7 @@ create(){
   this.platforms.create(852.5,550,'largoCostado');
   this.platforms.create(513.5,476.5,'cortoParado');
   this.platforms.create(712.5,650,'largoCostado');
+  this.platforms.create(712.5,680,'largoCostado');
   this.platforms.create(1160.5,723.5,'cortoParado');
   this.platforms.create(1133.5,723.5,'cortoParado');
   this.platforms.create(1198.5,723.5,'cortoParado');
@@ -135,6 +136,8 @@ create(){
   this.grupo.create(1280, 305, 'naranja');
   this.grupo.create(1280, 201.5, 'naranja');
   this.grupo.create(1218, 600, 'naranja');
+  this.grupo.create(358, 680, 'naranja');
+  this.grupo.create(1075, 680, 'naranja');
 
 
 //agregando las uvas 
@@ -154,9 +157,6 @@ create(){
   this.grupo.create(297, 410, 'ciruela');
   
 //agregando los duraznos
-  this.grupo.create(34, 735, 'durazno');
-  this.grupo.create(150, 735, 'durazno');
-  this.grupo.create(255, 735, 'durazno');
   this.grupo.create(25, 610, 'durazno');
   this.grupo.create(110, 610, 'durazno');
   this.grupo.create(195, 610, 'durazno');
@@ -169,26 +169,18 @@ create(){
   this.grupo.create(205, 513, 'sandia');
   this.grupo.create(152, 610, 'sandia');
   this.grupo.create(65, 610, 'sandia');
-  this.grupo.create(90, 705, 'sandia');
-  this.grupo.create(208, 705, 'sandia');
+  this.grupo.create(255, 680, 'sandia');
 
 //agregando los limones
   this.grupo.create(460, 600, 'limon');
-  this.grupo.create(460, 705, 'limon');
   this.grupo.create(540, 600, 'limon');
-  this.grupo.create(540, 705, 'limon');
   this.grupo.create(620, 600, 'limon');
-  this.grupo.create(620, 705, 'limon');
   this.grupo.create(700, 600, 'limon');
-  this.grupo.create(700, 705, 'limon');
   this.grupo.create(780, 600, 'limon');
-  this.grupo.create(780, 705, 'limon');
   this.grupo.create(860, 600, 'limon');
-  this.grupo.create(860, 705, 'limon');
   this.grupo.create(940, 600, 'limon');
-  this.grupo.create(940, 705, 'limon');
   this.grupo.create(1020, 600, 'limon');
-  this.grupo.create(1020, 705, 'limon');
+
 
 //colision jugador contra las plataformas
   this.physics.add.collider(this.player, this.platforms, this.paredColision, null, this); 
