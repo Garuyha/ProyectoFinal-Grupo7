@@ -19,7 +19,7 @@ export class JuegoAcabado extends Phaser.Scene{
       preload(){
         this.load.audio('gameover', './musica/gameover.mp3');
         this.load.audio('boton', './musica/boton.mp3');
-        this.load.image('fondo','./imagenes/fondo.jpg');
+        this.load.image('fondo','./imagenes/fondoarkanoid.jpg');
         this.load.image('gameover','./imagenes/gameover.jpg');  // Se precargan las imagenes de la escena.
         this.RestartButton.preload();
         this.load.audio('sonidobotones', './musica/sonidobotones.mp3');

@@ -35,10 +35,10 @@
 
 .textohangman{
     font-family: Bouncy-Thin;
-    font-size: 40px;
+    font-size: 42px;
     text-align: center;
     color: #6D9886;
-    margin: 45px;
+    margin:  0px 45px 45px;
 }
 
 .botonhangman{

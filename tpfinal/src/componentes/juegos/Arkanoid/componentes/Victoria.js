@@ -15,7 +15,7 @@ export class Ganaste extends Phaser.Scene{
     /*/ Precarga las imagenes desde su directorio /*/
 
       preload(){
-        this.load.image('fondo','./imagenes/fondo.jpg');
+        this.load.image('fondo','./imagenes/fondoarkanoid.jpg');
         this.load.image('ganaste','./imagenes/ganaste.png');             // Metodo que carga a las imagenes desde su directorio
         this.RestartButton.preload();                                    // Precarga al boton RESTART
         this.load.audio('sonidobotones', './musica/sonidobotones.mp3');
