@@ -1,0 +1,87 @@
+body{
+    margin: 0px;
+    background-image: url('../imagenes/Fondo.jpg');
+}
+header{
+    background-color: rgb(84,84,84);
+    margin: -10px -20px 0px;
+}
+.logo{
+    font-family: LEMON MILK-Bold;
+    display: flex;
+    font-size: 45px;
+    color: #c6cddb;
+    border-bottom: 5px solid #c6cddb;
+}
+.titulo{
+    margin: 70px 0px 0px;
+}
+.mate{
+    margin: 20px 10px 10px 30px;
+    width: 220px;
+    height: 168px;
+}
+.container{
+    text-align: right;
+}
+.navbar{
+    margin: 10px;
+    display: inline-block;
+}
+.categoria{
+    font-family: LEMON MILK-Light;
+    padding: 5px 25px 5px;
+    margin: 0px 20px;
+    font-size: 23px;
+    border: none;
+    color: #fff;
+    background: none;
+}
+.categoria:hover{
+    background: rgb(60,60,60);
+}
+
+@media (max-width:1170px){
+    .logo{
+        display: inline-block;
+        text-align: center;
+    }
+    .titulo{
+        margin: 10px;
+        text-align: center;
+    }
+    .container{
+        text-align: center;
+    }
+    .containertwo{
+        text-align: center;
+    }
+    .mate{
+        margin: 30px 0px 10px;
+    }
+    .navbar{
+        margin: 10px;
+        display: inline-block;
+    }
+    .categoria{
+        font-family: LEMON MILK-Light;
+        padding: 5px 25px 5px;
+        margin: 0px 5px;
+        font-size: 23px;
+        border: none;
+        color: #fff;
+        background: none;
+    }
+}
+
+
+@font-face{
+    font-family: LEMON MILK-Bold;
+    src: url('../fuentes/LEMONMILK-Bold.ttf');
+}
+
+@font-face{
+    font-family: LEMON MILK-Light;
+    src: url('../fuentes/LEMONMILK-Light.ttf');
+}
+
