@@ -86,6 +86,7 @@ create(){
   this.platforms.create(1238.5,723.5,'cortoParado');
   this.platforms.create(305,630,'largoParado');
   this.platforms.create(65,660,'cortoCostado'); 
+  this.platforms.create(65,690,'cortoCostado'); 
   this.platforms.create(171,462.5,'especialCostado');
   this.platforms.create(112.5,560,'especialCostado');
   this.platforms.create(513.5,390,'especial');
