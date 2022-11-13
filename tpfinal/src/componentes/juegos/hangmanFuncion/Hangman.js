@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./css/Hangman.css";
+import {Howl, Howler} from "howler"
 
 const palabras = [
   { fruta: "MANZANA", pista: "Es roja." },
@@ -23,6 +24,10 @@ const palabras = [
 ]//diccionario
 
 export default function Hangman() {
+  const errorSrc = "./audioEzequiel/error-sonido.mp3";
+  const corretaSrc = "./audioEzequiel/correcta-sonido.mp3";
+  const botonSrc = "./audioEzequiel/seleccion-sonido.mp3";
+
   const [word, setWord] = useState("a"); // palabra que va a aparecer
   const [pista, setPista] = useState("");
 
@@ -72,6 +77,15 @@ export default function Hangman() {
     setWrongLetter(0);
   };
 
+  const SoundPlay = (src) =>{
+    const sound = new Howl({
+        src
+    });
+    sound.play();
+  }
+
+  Howler.volume(0.5)
+
   let trollface = "./img/0.png"; //El ahorcado
   if (wrongLetter === 1) trollface = "./img/1.png";
   if (wrongLetter === 2) trollface = "./img/2.png";
@@ -79,7 +93,8 @@ export default function Hangman() {
   if (wrongLetter === 4) trollface = "./img/4.png";
   if (wrongLetter === 5) trollface = "./img/5.png";
   if (wrongLetter === 6) trollface = "./img/6.png";
-  if (wrongLetter > 6) trollface = "./img/6.png";
+  if (wrongLetter > 6)  trollface = "./img/6.png";
+  
   // Dependiendo de la cantidad de errores se irán apareciendo las extremidades del ahorcado, hasta llegar al gameover
 
   return (
@@ -91,6 +106,7 @@ export default function Hangman() {
             ? "¡VICTORIA!"
             : "Presione el boton para generar una palabra aleatoria." //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
         }
+        {!maskedWord.includes("_") ? SoundPlay(corretaSrc) : SoundPlay(botonSrc)}
       </div>
       <div className="imagencontainerhangman">
         <img src={trollface} alt="" className="trollasio" />
@@ -128,6 +144,7 @@ export default function Hangman() {
         {
           wrongLetter > 5 ? "La respuesta era: " + word : "" //En caso de que el juego haya terminado y no hayas ganado aparecera el texto de derrota
         }
+        {wrongLetter > 5 ? SoundPlay(errorSrc) : ""}
       </p>
       <div className="botonhangman">
         <button onClick={reinicioTurno} className="btnhangman">
