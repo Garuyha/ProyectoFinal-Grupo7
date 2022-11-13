@@ -1,12 +1,9 @@
 
 import Phaser from "phaser";
-import { BotonHome } from "./BotonHome";
 /*/ Constructor de la escena     /*/
 class NivelUno extends Phaser.Scene {
     constructor() {
         super('NivelUno');          // Identificador o key  de la escena.
-    
-        this.BotonHome= new BotonHome(this); 
     }
     /*/ Metodo preload, precarga imagenes y sonidos desde sus directorios /*/
     preload() {    
@@ -166,14 +163,7 @@ class NivelUno extends Phaser.Scene {
             this.jugador.setVelocityY(100);         // El jugador se desplaza a -100 unidades en Y hacia abajo.
             this.jugador.setVelocityX(0);          //  El desplazamiento en X se anula en cero, de lo contrario se produce un movimiento hacia abajo y en diagonal.
             this.jugador.rotation = 600;            // Gira la imagen de la hormiga 600 unidades en Y es decir  hacia abajo (la serpiente mira hacia  abajo cuando presionamos la tecla abajo).
-        }
-
-
-        if(this.BotonHome.isDown){
-
-        
-
-        }
+        }   
     }
     frutaColision(jugador, grupo) {
         grupo.disableBody(true, true);                        // Si se produce una colision entre el objeto jugador y el grupo , estos ultimos se destruyen.
@@ -210,13 +200,10 @@ class NivelUno extends Phaser.Scene {
         this.niniosSound.play();             // Reproduce sonido.
         this.victoriaSound.play();           // Reproduce sonido.
     }
+    
     mostrarNivelDos() {
         this.scene.start('NivelDos');
     }
-
-detenermusica(){
-
-}
 
 }
 export default NivelUno;           // Exporta la clase.

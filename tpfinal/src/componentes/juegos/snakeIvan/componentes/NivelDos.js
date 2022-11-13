@@ -265,8 +265,6 @@ class NivelDos extends Phaser.Scene {
     init() {
         this.score = 0;                   // Inicializa el Marcador Score en 0.
     }
-
-
 }
 
 export default NivelDos;

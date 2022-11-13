@@ -5,7 +5,6 @@ import { BotonNivelDos } from "./BotonNivelDos";
 export class Menu extends Phaser.Scene {
 // Metodo constructor por defecto de la escena //
   constructor() {
-
     super('Menu');                                  // Nombre del key o identficador de la escena
     this.BotonJugar = new BotonJugar(this);        // Se invoca un nuevo constructor del boton jugar desde la clase   BotonJugar.        
     this.BotonNivelUno= new BotonNivelUno(this);   // Se invoca un nuevo constructor del boton nivel uno desde la clase   BotonNivelUno. 
@@ -40,17 +39,12 @@ export class Menu extends Phaser.Scene {
     this.BotonJugar.create();
     this.BotonNivelUno.create();
     this.BotonNivelDos.create();
-
   }
 
-
-
   update() {
-
     this.musica1.play();       // Reproduce la musica del nivel 1.
     this.botonsonido.play();
     this.musica1.play();    // Reproduce el sonido del boton jugar.
-  
   
   }
 
