@@ -2,9 +2,19 @@
     {
         "imagenportada":"./img/Arkanoid.png",
         "nombrejuego":"ARKANOID",
-        "parrafouno":"¡Juega al clasico Arkanoid!.",
+        "parrafouno":"¡Juega al clasico Arkanoid!",
         "parrafodos":"Rompe todos los ladrillos que puedas en el clásico Arkanoid sin perder la bola de vista ni un solo momento. ",
         "parrafotres":"¡Consigue obtener la máxima puntuación!",
-        "linkto":"/juegoarkaoid"
+        "linkto":"/juegoarkaoid",
+        "id":"1"
+    },
+    {
+        "imagenportada":"./img/HungryAnt.png",
+        "nombrejuego":"HUNGRY ANT",
+        "parrafouno":"¡La hormiga tiene hambre!",
+        "parrafodos":"Recoge todas las frutas a lo largo del mapa para poder comerlas y así poder saciar tu hambre",
+        "parrafotres":"¡Dos niveles para jugar! podrás superarlos",
+        "linkto":"/juegohungry",
+        "id":"2"
     }
 ]

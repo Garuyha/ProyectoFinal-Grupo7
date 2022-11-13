@@ -16,6 +16,9 @@
 
 .textoinicio{
     font-family: LEMON MILK-Light;
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 @font-face{

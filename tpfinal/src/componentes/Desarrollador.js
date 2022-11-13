@@ -5,9 +5,9 @@ import "./css/Desarrollador.css";
 function Desarrollador() {
   return (
     <Fragment>
-      {desarrolladores.map((desarrollador) => {
+      {desarrolladores.map((desarrollador,key) => {
         return (
-          <div className="box">
+          <div className="box" key = {desarrollador.dni}>
             <div className="contenedor">
               <img
                 src={desarrollador.img}

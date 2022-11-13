@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
 .opciones{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -6,56 +8,65 @@
 
 .opcion{
     font-size: 40px;
-    border: 3px solid black;
+    border: 5px solid #272343;
+    border-style: dotted;
     border-radius: 10%;
     padding: 6px;
     cursor: pointer;
-    background-color: black;
-    color: gold;
+    background-color: #fffffe;
+    color: #2f2f67;
     margin: 10px 0px 0px 0px;    
 
 }
 .opcion:hover{
-    background-color: white;
+    background-color: #ffd803;
 }
 
 .resultado{
     font-size: 40px;
-    color: #000;
+    color: #22224e;
     text-align: center;
-    
+    padding: 1px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom: 7px dashed #2f2f67;
+    background: #ffd803;
 }
 
 .contenedorppt{    
-    background-color:#fff;
+    background-color:#fffffe;
     margin: 80px 80px;
     border-radius: 5%;
-    padding: 60px 0px;
+    font-family: Papernote;
+    padding-bottom: 40px;
 }
 
 .tarjetaContenedor{    
     display: flex;
     justify-content: space-around;
     margin: 20px;
-    
+    margin-top: 40px;
 }
 .tarjetaJugador{  
     font-size: 60px;  
     display: grid;
     justify-items: center;
-    background: rgba(84,84,84,0.4);
-    color: #000;
+    background: #e3f6f5;
+    color: #2f2f67;
     padding: 20px 30px;
     border-radius: 10px;
+    border-radius: 20px;
+    border: 10px solid #4c4386;
 }
 .tarjetaMaquina{    
     font-size: 60px;  
     display: grid;
     justify-items: center;
-    background: rgba(84,84,84,0.4);
-    color: black;
+    background: #e3f6f5;
+    color: #2f2f67;
     padding: 20px 30px;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 10px solid #4c4386;
 }
 
 .botonMenu{
@@ -75,7 +86,12 @@
 .imagenSeleccion{    
     width: 226px;
     height: 226px;
-    margin: 0;
-    padding: 0;
+    border: 7px solid #4c4386;
+    border-radius: 15px;
+    background: #fffffe;
 }
 
+@font-face{
+    font-family: Papernote;
+    src: url('../fuentesppt/Papernotes\ Sketch.ttf');
+}

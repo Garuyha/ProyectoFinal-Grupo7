@@ -2,6 +2,7 @@
 import Phaser from 'phaser';
 import { useEffect, useState } from 'react';
 import Preloader from './componentes/Preloader';
+
 import NivelUno from './componentes/NivelUno';
 import { GameOver } from './componentes/GameOver';
 
