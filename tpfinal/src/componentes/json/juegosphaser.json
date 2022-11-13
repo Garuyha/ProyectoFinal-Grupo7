@@ -16,5 +16,14 @@
         "parrafotres":"¡Dos niveles para jugar! podrás superarlos",
         "linkto":"/juegohungry",
         "id":"2"
+    },
+    {
+        "imagenportada":"./img/Dude.png",
+        "nombrejuego":"Dude",
+        "parrafouno":"¡Dude!",
+        "parrafodos":"Dude",
+        "parrafotres":"¿Dude? ¡Dude!",
+        "linkto":"/juegohdude",
+        "id":"3"
     }
 ]

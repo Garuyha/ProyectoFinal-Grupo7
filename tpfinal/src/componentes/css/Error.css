@@ -1,0 +1,73 @@
+
+.errorcontainer{
+    background: #fff;
+    margin: 80px 13%;
+}
+.ea{
+    display: flex;
+    justify-content: center;
+}
+
+.containererrortexto{
+    margin-top: 20px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.errorerror{
+    font-family: Roboto-Black;
+    font-size: 45px;
+}
+
+.mensajeerror{
+    margin-top: -40px;
+    font-family: LEMON MILK;
+    font-size: 27px;
+}
+
+.textoerror{
+    font-family: Roboto-Lt;
+    font-size: 27px;
+}
+
+.imgerror{
+    margin-top: 220px;
+}
+
+@media (max-width:1200px){
+    .imgerror{
+       width: 450px;
+       height: 280px;
+    }
+}
+
+@media (max-width:1000px){
+    .ea{
+        display:inline-block;
+        justify-content: none;
+    }
+    .imgerror{
+       width: 450px;
+       height: 280px;
+    }
+    .imgerror{
+        margin-top: 20px;
+    }
+    .errorcontainer{
+        margin: 80px 3%;
+    }
+}
+
+@font-face{
+    font-family: Roboto-Black;
+    src: url('../fuentes/Roboto-Black.ttf');
+}
+@font-face{
+    font-family: LEMON MILK;
+    src: url('../fuentes/LEMONMILK-Regular.ttf');
+}
+
+@font-face{
+    font-family: Roboto-Lt;
+    src: url('../fuentes/Roboto-Light.ttf');
+}
