@@ -27,7 +27,7 @@ export default function Hangman() {
   const errorSrc = "./audioEzequiel/error-sonido.mp3";
   const corretaSrc = "./audioEzequiel/correcta-sonido.mp3";
   const botonSrc = "./audioEzequiel/seleccion-sonido.mp3";
-  
+
   const [word, setWord] = useState("a"); // palabra que va a aparecer
   const [pista, setPista] = useState("");
 
@@ -79,8 +79,7 @@ export default function Hangman() {
 
   const SoundPlay = (src) =>{
     const sound = new Howl({
-        src,
-        html5: true
+        src
     });
     sound.play();
   }
