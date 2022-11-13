@@ -15,7 +15,6 @@ export class BotonJugar {
       this.relatedScene.scene.start('Preloader');                       // Permite el cambio a la escena Preloader.
     });
 
-
   }
 
 

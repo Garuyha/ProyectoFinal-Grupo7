@@ -52,7 +52,7 @@ class NivelDos extends Phaser.Scene {
 
         //creando el fondo2
         this.add.image(650, 370, 'fondo2');
-        this.add.image(25, 18, 'cesta');
+        this.add.image(1210, 18, 'cesta');
         //creando las plataformas y estos permanecen estaticos.
         this.platforms = this.physics.add.staticGroup();
         this.platforms.create(326, 55, 'largoCostado');
@@ -197,7 +197,7 @@ class NivelDos extends Phaser.Scene {
         this.victoriaSound = this.sound.add('sonidovictoria');
 
         //texto de puntaje
-        this.scoreText = this.add.text(45, 10, 'X 0', { fontSize: '16px', fill: 'YELLOW', fontFamily: 'Franklin Gothic Medium' });
+        this.scoreText = this.add.text(1233, 14, 'X 0', { fontSize: '16px', fill: 'YELLOW', fontFamily: 'Franklin Gothic Medium' });
 
     }
 
@@ -232,14 +232,14 @@ class NivelDos extends Phaser.Scene {
 
     }
     frutaColision(player, grupo) {
-        grupo.disableBody(true, true);     // Si se produce una colision entre el objeto player y el grupo , estos ultimos se destruyen.
-        this.score++;
-        this.scoreText.setText('X ' + this.score);
-        this.comidaSound.play();
-        this.scoreSound.play();
-        if (this.grupo.countActive() === 0)   //si el grupo llega a 0  se cambia a la escena de pantalla de Victoria  
+        grupo.disableBody(true, true);                // Si se produce una colision entre el objeto player y el grupo , estos ultimos se destruyen.
+        this.score++;                                // Adiciona un punto por cada colsion con las frutas.
+        this.scoreText.setText('X ' + this.score);   // Refleja el valor actualizado del score.
+        this.comidaSound.play();                     // Reproduce sonido al colisionar con las frutas.
+        this.scoreSound.play();                     // Reproduce sonido del score.
+        if (this.grupo.countActive() === 0)         //si el grupo llega a 0  se cambia a la escena de pantalla de Victoria  
         {
-            this.mostrarPantallaVictoria();  // Se invoca el metodo que cambiara a la escena nivel dos.
+            this.mostrarPantallaVictoria();        // Se invoca el metodo que cambiara a la escena nivel dos.
         }
     }
     // Metodo para la colision del jugador y las paredes 
@@ -265,8 +265,6 @@ class NivelDos extends Phaser.Scene {
     init() {
         this.score = 0;                   // Inicializa el Marcador Score en 0.
     }
-
-
 }
 
 export default NivelDos;
