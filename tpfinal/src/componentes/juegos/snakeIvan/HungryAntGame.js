@@ -1,5 +1,5 @@
 import './HungryAntApp.css'
-import AntApp from './AntApp'
+import AntApp from "./AntApp"
 
 export default function HungryAnt(){
     return(

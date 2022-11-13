@@ -2,12 +2,11 @@
 import Phaser from "phaser";
 /*/ Constructor de la escena     /*/
 class NivelUno extends Phaser.Scene {
-    constructor() 
-    {
+    constructor() {
         super('NivelUno');          // Identificador o key  de la escena.
     }
     /*/ Metodo preload, precarga imagenes y sonidos desde sus directorios /*/
-    preload() {
+    preload() {    
         // Imagenes//
         this.load.image('hormiga', './imagenes/hormiga.png');
         this.load.image('cuerpo', './imagenes/cuerpo.png');
@@ -31,6 +30,7 @@ class NivelUno extends Phaser.Scene {
         this.load.audio('pou', './musica/pou.mp3');
         this.load.audio('ninios', './musica/ninios.mp3');
         this.load.audio('sonidovictoria', './musica/sonidovictoria.mp3');
+        
     }
     /*/ Metodo Create, crea imagenes ,sonidos odesde sus identificadores, tambien se crean variables /*/
 
@@ -118,7 +118,7 @@ class NivelUno extends Phaser.Scene {
         this.niniosSound = this.sound.add('ninios');
         this.victoriaSound = this.sound.add('sonidovictoria');
         // Creacion del mapa y fisicas del mismo //
-        this.map = this.add.tilemap('tiles')                          // Se crea una variable que contendra el archivo json con las coordenadas de las texturas.
+        this.map = this.add.tilemap('tiles');                          // Se crea una variable que contendra el archivo json con las coordenadas de las texturas.
         var tileset = this.map.addTilesetImage("grass", "grass");     // Se crea una variable que invocara a la imagen con las texturas.
         var solidos = this.map.createStaticLayer("bordes", tileset);  //  Se crea una capa de textura extraida desde el archivo json.
         solidos.setCollisionByProperty({ solido: true })                                    // Toma en cuenta las propiedades definidas para las capas de textura  en el json del mapa
@@ -163,14 +163,14 @@ class NivelUno extends Phaser.Scene {
             this.jugador.setVelocityY(100);         // El jugador se desplaza a -100 unidades en Y hacia abajo.
             this.jugador.setVelocityX(0);          //  El desplazamiento en X se anula en cero, de lo contrario se produce un movimiento hacia abajo y en diagonal.
             this.jugador.rotation = 600;            // Gira la imagen de la hormiga 600 unidades en Y es decir  hacia abajo (la serpiente mira hacia  abajo cuando presionamos la tecla abajo).
-        }
+        }   
     }
     frutaColision(jugador, grupo) {
-        grupo.disableBody(true, true);                        // Si se produce una colision entre el objeto jugador y el grupo , estos ultimos se destruyen.
-        this.score++;                                        // Adiciona un punto al Score cada vez que se produce la colision.
-        this.scoreText.setText('X ' + this.score);       
-        this.comidaSound.play()                             // Reproduce el sonido.
-        this.scoreSound.play()                               // Reproduce el sonido.
+        grupo.disableBody(true, true);                            // Si se produce una colision entre el objeto jugador y el grupo , estos ultimos se destruyen.
+        this.score++;                                            // Adiciona un punto al Score cada vez que se produce la colision.
+        this.scoreText.setText('X ' + this.score);              // Refleja el valor actualizado del score.
+        this.comidaSound.play();                               // Reproduce el sonido.
+        this.scoreSound.play();                               // Reproduce el sonido.
         if (this.grupo.countActive() === 0)                  // Si la cantidad de objetos frutas que conforman el grupo es igual a 0, se cambia de escena al nivel 2
         {
             this.mostrarNivelDos();                  // Se invoca el metodo que cambiara a la escena nivel dos.
@@ -183,26 +183,27 @@ class NivelUno extends Phaser.Scene {
     /*/ Metodo para la colision del jugador y las paredes  /*/
 
     paredColision() {
-        this.golpeSound.play()          // Si el jugador colisiona con alguna de las paredes del mapa del juego, se pierde y se muestra la escena Game Over
+        this.golpeSound.play();          // Si el jugador colisiona con alguna de las paredes del mapa del juego, se pierde y se muestra la escena Game Over
         this.mostrarGameOver();         // Se invoca el metodo que cambiara a la escena Game Over.
     }
     /*/ Metodo que muestra la pantalla o escena Game Over  /*/
     mostrarGameOver() {
         this.scene.start('GameOver');       // Inicia la escena GameOver
-        this.sound.pauseAll('musica1')    // Pausa la musica de el nivel 1
-        this.golpeSound.play()          // Reproduce sonido.
-        this.pouSound.play()            // Reproduce sonido.
+        this.sound.pauseAll('musica1');    // Pausa la musica de el nivel 1
+        this.golpeSound.play();          // Reproduce sonido.
+        this.pouSound.play();            // Reproduce sonido.
     }
     /*/ Metodo que muestra la pantalla o escena de Victoria /*/
     mostrarPantallaVictoria() {
         this.scene.start('Victoria');       // Inicia la escena Victoria          
-        this.sound.pauseAll('musica1')      // Pausa la musica de el nivel 1
-        this.niniosSound.play()             // Reproduce sonido.
-        this.victoriaSound.play()           // Reproduce sonido.
+        this.sound.pauseAll('musica1');      // Pausa la musica de el nivel 1
+        this.niniosSound.play();             // Reproduce sonido.
+        this.victoriaSound.play();           // Reproduce sonido.
     }
-     mostrarNivelDos(){
-    this.scene.start('NivelDos'); 
-     }
+    
+    mostrarNivelDos() {
+        this.scene.start('NivelDos');
+    }
 
 }
 export default NivelUno;           // Exporta la clase.
