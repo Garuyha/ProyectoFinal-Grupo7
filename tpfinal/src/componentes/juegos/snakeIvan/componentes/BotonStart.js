@@ -10,7 +10,7 @@ export class BotonJugar {
   }
 
   create() {
-    this.startButton = this.relatedScene.add.image(632, 475, 'jugar').setInteractive();
+    this.startButton = this.relatedScene.add.image(632, 350, 'jugar').setInteractive();
     this.startButton.on('pointerdown', () => {                                                 //Funcion del boton jugar.
       this.relatedScene.scene.start('Preloader');                       // Permite el cambio a la escena Preloader.
     });
