@@ -1,5 +1,4 @@
 
-
 export class BotonJugar {
   constructor(scene) {
     this.relatedScene = scene;     // Constructor de la escena y del boton jugar.
