@@ -12,7 +12,6 @@ import {Howl, Howler} from "howler"
 
 export function Juego(){
     const[eleccionJugador,setEleccionJugador] = useState({});
-
     const[eleccionMaquina, setEleccionMaquina] = useState(
         {
             elección: "Esperando",

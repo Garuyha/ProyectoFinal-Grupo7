@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./css/Hangman.css";
-import {Howl, Howler} from "howler"
+import {Howl, Howler} from "howler" //Biblioteca que permite la reproducción de sonido
 
 const palabras = [
   { fruta: "MANZANA", pista: "Es roja." },
@@ -21,16 +21,19 @@ const palabras = [
   { fruta: "MELON", pista: "Cuando hace calor se lo parte y rellena con vino." },
   { fruta: "DURAZNO", pista: "Tiene una gran y única semilla y suele ser usado para licuados." },
   { fruta: "CABALLO", pista: "Esto no es una fruta ¿Qué hace aquí? Bueno... Montar a ..." },
-]//diccionario
+]//diccionario con las palabras y las pistas asociadas a cada de ellas.
 
 export default function Hangman() {
+  //Error, correcta y boton, son los archivos mp3 usados en esta pagina.
   const errorSrc = "./audioEzequiel/error-sonido.mp3";
   const corretaSrc = "./audioEzequiel/correcta-sonido.mp3";
   const botonSrc = "./audioEzequiel/seleccion-sonido.mp3";
 
+  //Se hace uso del useState para facilitar el trabajo con word (la palabra a adivinar) y su pista correspondiente
   const [word, setWord] = useState("a"); // palabra que va a aparecer
   const [pista, setPista] = useState("");
 
+  //Array que contiene todas las letras del abecedario que permiten adivinar las palabras ocultas. Ademas, son usados para la muestra de los botones.
   const alphabets = [
     "A",
     "B",
@@ -69,22 +72,24 @@ export default function Hangman() {
 
   const [wrongLetter, setWrongLetter] = useState(0); //Contador de letras incorrectas, este se encarga de guardar cuantos errores se cometieron
 
+  //Funcion que permite reiniciar el juego, generando una nueva palabra y pista correspondiente a la misma, eliminando los errores como aciertos de la palabra anterior.
   const reinicioTurno = () => {
-    const palabra = palabras[Math.floor(Math.random() * palabras.length)];
-    setWord(palabra.fruta);
-    setPista(palabra.pista);
-    setCorrectGuesses([]);
-    setWrongLetter(0);
+    const palabra = palabras[Math.floor(Math.random() * palabras.length)]; //Elección de la nueva palabra de forma aleatoria.
+    setWord(palabra.fruta); //Se establece en word la nueva palabra.
+    setPista(palabra.pista); //Se establece la pista de la palabra.
+    setCorrectGuesses([]); //Se limpia la cantidad de palabras correctas ingresadas.
+    setWrongLetter(0); //Se reinicia el contador de palabras equivocadas.
   };
 
+  //Funcion de Howl que permite la reprodución de audio.
   const SoundPlay = (src) =>{
     const sound = new Howl({
-        src
+        src //Se recibe como props la dirección del archivo mp3 a reproducir.
     });
-    sound.play();
+    sound.play(); //Se reproduce el archivo mp3 en la pagina.
   }
 
-  Howler.volume(0.5)
+  Howler.volume(0.5) //Volumen de los audios reproducidos.
 
   let trollface = "./img/0.png"; //El ahorcado
   if (wrongLetter === 1) trollface = "./img/1.png";
@@ -106,7 +111,8 @@ export default function Hangman() {
             ? "¡VICTORIA!"
             : "Presione el boton para generar una palabra aleatoria." //En caso de que la palabra ya no contenga "_" aparece el mensaje de victoria
         }
-        {!maskedWord.includes("_") ? SoundPlay(corretaSrc) : SoundPlay(botonSrc)}
+        {!maskedWord.includes("_") ? SoundPlay(corretaSrc) : SoundPlay(botonSrc) /**En caso de que la palabra correcta haya sido adivinada
+        se reproducira un sonido de victoria */}
       </div>
       <div className="imagencontainerhangman">
         <img src={trollface} alt="" className="trollasio" />
@@ -138,17 +144,18 @@ export default function Hangman() {
           }
         </div>
       </div>
-      <p className="pistahangman">{wrongLetter < 6 ? "Ayuda: " + pista : ""}</p>
+      <p className="pistahangman">{wrongLetter < 6 ? "Ayuda: " + pista : ""/**La pista sera visible, siempre y cuando la cantidad de errores sea menor que 6 */}</p>
 
       <p className="pistahangman">
         {
           wrongLetter > 5 ? "La respuesta era: " + word : "" //En caso de que el juego haya terminado y no hayas ganado aparecera el texto de derrota
         }
-        {wrongLetter > 5 ? SoundPlay(errorSrc) : ""}
+        {wrongLetter > 5 ? SoundPlay(errorSrc) : ""/**Cuando el jugador pierde, se equivoca 6 veces, se reproduce un sonido de derrota */}
       </p>
       <div className="botonhangman">
         <button onClick={reinicioTurno} className="btnhangman">
-          {wrongLetter > 5 ? "Reintentar" : "Generar palabra"}
+          {wrongLetter > 5 ? "Reintentar" : "Generar palabra" /**Si el jugador se equivoca 6 veces el texto del boton cambia a reintentar, caso contrario
+          se mantendra en generar nueva palabra. */}
         </button>
       </div>
     </div>
