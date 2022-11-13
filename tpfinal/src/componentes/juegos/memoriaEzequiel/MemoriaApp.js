@@ -109,8 +109,13 @@ export default function App(){
     return(
         <div className = "App">
             <h1>TAROT MAGICO</h1>
+            <h1>                                
+                {turnos <= 0 ? "Has perdido, precione el boton jugar para empezar de nuevo" : "Intentos: "+ turnos}
+            </h1>
+            <h1>
+                {aciertos <= 0 ? "Has ganado, precione el boton jugar para empezar de nuevo": ""}
+            </h1>
             <button onClick={mezclarCartas}>Jugar</button>
-
             <div className="grilla-cartas">
                 {cartas.map(carta => (
                     <CartaUnica 
@@ -122,12 +127,6 @@ export default function App(){
                     />
                 ))}
             </div>
-            <h1>                                
-                {turnos <= 0 ? "Has perdido, precione el boton jugar para empezar de nuevo" : "Intentos: "+ turnos}
-            </h1>
-            <h1>
-                {aciertos <= 0 ? "Has ganado, precione el boton jugar para empezar de nuevo": ""}
-            </h1>
         </div>
     );
 }
