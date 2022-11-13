@@ -1,7 +1,7 @@
 
 export class BotonNivelDos {
     constructor(scene) {
-        this.relatedScene = scene;                                                   // Constructor de la escena y del boton nivel dos.
+        this.relatedScene = scene;                                                   // Constructor de la escena.
 
     }
     preload() {
