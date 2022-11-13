@@ -2,7 +2,7 @@ import Header from "./componentes/Header";
 import { Routes, Route } from "react-router-dom";
 import Inicio from "./componentes/Inicio";
 import MenuPhaser from "./componentes/MenuPhaser";
-import HungryAnt from "./componentes/juegos/snakeIvan/HungryAntGame";
+import HungryAnt from './componentes/juegos/snakeIvan/HungryAntGame'
 import MenuReact from "./componentes/MenuReact";
 import Desarrollador from "./componentes/Desarrollador";
 import Arkanoid from "./componentes/juegos/Arkanoid/Arkanoid";
