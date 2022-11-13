@@ -1,9 +1,8 @@
-import './App.css';
 import { useEffect, useState } from 'react';
 import Phaser from 'phaser';
-import Escena from './componentes/juegos/componenteJuego/dude/Escena';
+import Escena from './Escena';
 
-function AppDude() {
+function DudeApp() {
 
     //uso state de  una variable listo, si no usamos esto los lienzos se acumularan
     const [listo,setListo] = useState(false);
@@ -44,4 +43,4 @@ function AppDude() {
 
 }
 
-export default AppDude;
+export default DudeApp;
