@@ -45,7 +45,69 @@ class NivelUno extends Phaser.Scene {
         // Creacion de las imagenes y del grupo de objetos 'frutas' //
         this.grupo = this.physics.add.staticGroup();     // Se añade fisicas a los objetos frutas y estos permanecen  estaticos.
         this.grupo.create(140, 250, 'uva');
-        
+        this.grupo.create(140, 70, 'uva');
+        this.grupo.create(140, 170, 'uva');
+        this.grupo.create(140, 460, 'uva');                // Creacion objeto uva.
+        this.grupo.create(140, 540, 'uva');
+        this.grupo.create(140, 630, 'uva');
+
+        this.grupo.create(324, 250, 'naranja');
+        this.grupo.create(324, 70, 'naranja');
+        this.grupo.create(324, 170, 'naranja');             // Creacion objeto naranja.
+        this.grupo.create(324, 460, 'naranja');
+        this.grupo.create(324, 530, 'naranja');
+        this.grupo.create(324, 600, 'naranja');
+
+        this.grupo.create(365, 250, 'banana');
+        this.grupo.create(365, 70, 'banana');
+        this.grupo.create(365, 170, 'banana');
+        this.grupo.create(365, 460, 'banana');             // Creacion objeto banana.
+        this.grupo.create(750, 70, 'banana');
+        this.grupo.create(750, 170, 'banana');
+        this.grupo.create(750, 100, 'banana');
+
+        this.grupo.create(420, 250, 'anana');
+        this.grupo.create(420, 70, 'anana');
+        this.grupo.create(420, 170, 'anana');              // Creacion objeto anana.
+        this.grupo.create(420, 460, 'anana');
+        this.grupo.create(420, 540, 'anana');
+        this.grupo.create(420, 600, 'anana');
+
+        this.grupo.create(630, 250, 'ciruela');
+        this.grupo.create(630, 70, 'ciruela');           // Creacion objeto ciruela.
+        this.grupo.create(630, 170, 'ciruela');
+
+        this.grupo.create(1000, 250, 'sandia');
+        this.grupo.create(1000, 70, 'sandia');
+        this.grupo.create(1000, 170, 'sandia');
+        this.grupo.create(1000, 355, 'sandia');          // Creacion objeto sandia.
+        this.grupo.create(1000, 460, 'sandia');
+        this.grupo.create(1000, 540, 'sandia');
+
+        this.grupo.create(1095, 250, 'limon');
+        this.grupo.create(1095, 70, 'limon');
+        this.grupo.create(1095, 170, 'limon');
+        this.grupo.create(1095, 355, 'limon');           // Creacion objeto limon.
+        this.grupo.create(1095, 460, 'limon');
+        this.grupo.create(1095, 540, 'limon');
+        this.grupo.create(1095, 600, 'limon');
+
+        this.grupo.create(900, 250, 'durazno');
+        this.grupo.create(900, 70, 'durazno');
+        this.grupo.create(900, 170, 'durazno');          // Creacion objeto durazno.
+        this.grupo.create(900, 355, 'durazno');
+        this.grupo.create(900, 460, 'durazno');
+        this.grupo.create(900, 540, 'durazno');
+
+        this.grupo.create(820, 70, 'manzana');
+        this.grupo.create(605, 475, 'manzana');
+        this.grupo.create(605, 550, 'manzana');
+        this.grupo.create(680, 550, 'manzana');
+        this.grupo.create(70, 250, 'manzana');            // Creacion objeto manzana.
+        this.grupo.create(70, 70, 'manzana');
+        this.grupo.create(70, 170, 'manzana');
+        this.grupo.create(70, 460, 'manzana');
+        this.grupo.create(70, 540, 'manzana');
         this.physics.add.collider(this.jugador, this.grupo, this.frutaColision, null, this);  //  Se añade la funcion de colision a los objetos establecidos en los parametros.
 
         // Creacion de la musica y sonidos//
