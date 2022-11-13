@@ -15,15 +15,50 @@
 }
 
 .textoinicio{
-    font-family: LEMON MILK-Light;
     text-align: left;
     margin-left: 100px;
     margin-right: 100px;
 }
+.tituloInicio{
+    font-family: LEMON MILK;
+    font-size: 40px;
+}
+
+.parrafoInicio{
+    font-family: Roboto-Lt;
+    font-size: 30px;
+}
+
+.contenedorimgInicio{
+    text-align: center;
+}
+
+@media (max-width:900px){
+    .textoinicio{
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .evilapartado{
+        font-family: Roboto-Thin;
+        margin: -20px 20px 60px;
+    }
+    .parrafoInicio{
+        font-family: Roboto-Lt;
+        font-size: 25px;
+    }
+    .tituloInicio{
+        font-family: LEMON MILK;
+        font-size: 35px;
+    }
+    .body{
+        margin: 40px 20px;
+    }
+}
 
 @font-face{
-    font-family: LEMON MILK-Light;
-    src: url('../fuentes/LEMONMILK-Light.ttf');
+    font-family: LEMON MILK;
+    src: url('../fuentes/LEMONMILK-Regular.ttf');
 }
 
 @font-face{
@@ -34,4 +69,8 @@
 @font-face{
     font-family: Roboto-Thin;
     src: url('../fuentes/Roboto-Thin.ttf');
+}
+@font-face{
+    font-family: Roboto-Lt;
+    src: url('../fuentes/Roboto-Light.ttf');
 }
