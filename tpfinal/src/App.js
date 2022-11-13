@@ -9,6 +9,7 @@ import Arkanoid from "./componentes/juegos/Arkanoid/Arkanoid";
 import Juego from "./componentes/juegos/PiedraPapelTijera/Juego";
 import Hangman from "./componentes/juegos/hangmanFuncion/Hangman";
 import MemoriaApp from "./componentes/juegos/memoriaEzequiel/MemoriaApp";
+import Error from "./componentes/Error";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/juegoppt" element={<Juego />} />
         <Route path="/juegoahorcadito" element={<Hangman />} />
         <Route path="/memoriaapp" element={<MemoriaApp />} />
+        <Route path="*" element={<Error/>}/>
       </Routes>
     </div>
   );
