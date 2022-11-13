@@ -18,8 +18,13 @@ const cartasImagenes = [
 
 export default function App(){
 
+    const errorSrc = "./audioEzequiel/error-sonido.mp3";
+    const corretaSrc = "./audioEzequiel/correcta-sonido.mp3";
+    const victoriaSrc = "./audioEzequiel/victoria-sonido.mp3";
+    const derrotaSrc = "./audioEzequiel/perder-sonido.mp3";
     const[cartas, setCartas] = useState([]);
-    const[turnos, setTurnos] = useState(0);
+    const[turnos, setTurnos] = useState(8);
+    const[aciertos, setAciertos] = useState(6);
     const[eleccionUno, setEleccionUno] = useState(null); //La primera carta que elige el jugador
     const[eleccionDos, setEleccionDos] = useState(null); //La segunda carta que elige el jugador
     const[desabilitada, setDesabilitada] = useState(false);
@@ -40,7 +45,8 @@ export default function App(){
             .sort(()=> Math.random() - 0.5)
             .map((carta) => ({...carta, id: Math.random()}))
             setCartas(mezclarCartas)
-            setTurnos(0)
+            setTurnos(8)
+            setAciertos(6)
     }
 
     //Resolver una elección
@@ -62,21 +68,43 @@ export default function App(){
                         }
                     })
                 })
+                SoundPlay(corretaSrc)
+                setTurnos(antTurno => antTurno+1)
+                setAciertos(antAcierto => antAcierto-1)
                 reinicioTurno()
             }else{
-                console.log("no son iguales")
+                SoundPlay(errorSrc)
+                setTurnos(antTurno => antTurno-1)
                 setTimeout(() => reinicioTurno(), 1000)
             }
         }
     }, [eleccionUno, eleccionDos])
 
+    useEffect(()=>{
+        if(turnos<=0){
+            setDesabilitada(true)
+            SoundPlay(derrotaSrc)
+        }
+        if(aciertos<=0){
+            SoundPlay(victoriaSrc)
+        }
+    }, [turnos, aciertos])
+
     //Reinicio de las elección e incremento de los turnos jugados
     const reinicioTurno = () => {
         setEleccionUno(null)
         setEleccionDos(null)
-        setTurnos(antTurno => antTurno+1)
         setDesabilitada(false)
-    }
+    }  
+    
+    const SoundPlay = (src) =>{
+        const sound = new Howl({
+            src
+        });
+        sound.play();
+      }
+    
+      Howler.volume(0.5)
     
     return(
         <div className = "App">
@@ -94,6 +122,12 @@ export default function App(){
                     />
                 ))}
             </div>
+            <h1>                                
+                {turnos <= 0 ? "Has perdido, precione el boton jugar para empezar de nuevo" : "Intentos: "+ turnos}
+            </h1>
+            <h1>
+                {aciertos <= 0 ? "Has ganado, precione el boton jugar para empezar de nuevo": ""}
+            </h1>
         </div>
     );
 }
