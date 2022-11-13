@@ -3,7 +3,7 @@ import "./css/Inicio.css";
 function Inicio() {
   return (
     <div className="body">
-      <h1 className="empresa"> MATE JUEGOS</h1>
+      <h1 className="empresa"> MATE CEBADO ENTERTAINMENT</h1>
       <p className="evilapartado">
         Página creada puramente para fines educativos del grupo 7
       </p>

@@ -107,16 +107,16 @@ update(){
 
 if (this.cursors.left.isDown){
   
-this.barra.setVelocityX(-1200);            // si se presiona la tecla flecha izquierda y si se mantiene apretada se produce un movimiento en el eje X hacia la izquierda.
+this.barra.setVelocityX(-900);            // si se presiona la tecla flecha izquierda y si se mantiene apretada se produce un movimiento en el eje X hacia la izquierda.
 if(this.pelota.getData('union')) {
-    this.pelota.setVelocityX(-1200);
+    this.pelota.setVelocityX(-900);
     
   }
 }
 else if(this.cursors.right.isDown){      // si se presiona la tecla flecha derecha y se mantiene apretada se produce un movimiento en el eje X hacia la derecha.
-this.barra.setVelocityX(1200);
+this.barra.setVelocityX(900);
 if (this.pelota.getData('union')) {
-    this.pelota.setVelocityX(1200);
+    this.pelota.setVelocityX(900);
   }
 
 }
@@ -131,7 +131,7 @@ else {
       if (this.cursors.up.isDown) {
         
         if (this.pelota.getData('union')) {                 
-          this.pelota.setVelocity(-400, -800);              // velocidad de la pelota al despegarse de la barra del jugador  en los ejes X e Y
+          this.pelota.setVelocity(-250, -500);              // velocidad de la pelota al despegarse de la barra del jugador  en los ejes X e Y
           this.pelota.setData('union', false);              // Permite que la pelota se separe de la barra al presionar la tecla flecha arriba.
           this.musicaescena.play()                          // Reproduce cancion de la escena.
           
