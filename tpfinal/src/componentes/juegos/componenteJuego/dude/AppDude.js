@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import Phaser from 'phaser';
-import Escena from './componentes/Escena';
+import Escena from './componentes/juegos/componenteJuego/dude/Escena';
 
 function App() {
 
