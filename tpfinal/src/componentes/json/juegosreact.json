@@ -5,7 +5,8 @@
         "parrafouno":"Elige entre las opciones para poder ganarle a la maquina.",
         "parrafodos":"Como dice el nombre tienes opciones para ganar.",
         "parrafotres":"¡Entra y vence la maquina!",
-        "linkto":"/juegoppt"
+        "linkto":"/juegoppt",
+        "id":"1"
     },
     {
         "imagenportada":"./img/Ahorcado.png",
@@ -13,7 +14,8 @@
         "parrafouno":"¡Salva a trollface de la muerte! Elige las letras correctas para evitar que nuestro amigo termine colgado.",
         "parrafodos":"¿Podrás adivinarla antes de los seis intentos?",
         "parrafotres":"¡Ayuda a Trollface a liberarse!",
-        "linkto":"/juegoahorcadito"
+        "linkto":"/juegoahorcadito",
+        "id":"2"
     },
     {
         "imagenportada":"./img/CartaMate.png",
@@ -21,7 +23,8 @@
         "parrafouno":"¿Que tan buena memoria tienes? ¡Entra y prueba!",
         "parrafodos":"Tienes que darle click a las cartas y emparentarlas con su gemela",
         "parrafotres":"¡Vamos!",
-        "linkto":"/memoriaapp"
+        "linkto":"/memoriaapp",
+        "id":"3"
     }
     
 ]

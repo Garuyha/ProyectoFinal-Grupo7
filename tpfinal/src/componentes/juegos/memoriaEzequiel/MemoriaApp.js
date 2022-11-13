@@ -9,7 +9,7 @@ import {Howl, Howler} from "howler"
 const cartasImagenes = [
     {"src": "./assetsEzequiel/caruaje.png", sonido: "./audioEzequiel/seleccion-sonido.mp3",elegida: false},
     {"src": "./assetsEzequiel/estrella.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
-    {"src": "./assetsEzequiel/hermitaneo.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
+    {"src": "./assetsEzequiel/hermitaneo.jpg", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
     {"src": "./assetsEzequiel/hiedrofante.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
     {"src": "./assetsEzequiel/mago.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false},
     {"src": "./assetsEzequiel/mundo.png", sonido: "./audioEzequiel/seleccion-sonido.mp3", elegida: false}
@@ -80,7 +80,7 @@ export default function App(){
     
     return(
         <div className = "App">
-            <h1>Juego de memoria</h1>
+            <h1>TAROT MAGICO</h1>
             <button onClick={mezclarCartas}>Jugar</button>
 
             <div className="grilla-cartas">

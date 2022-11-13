@@ -5,11 +5,11 @@ const palabras = [
   { fruta: "MANZANA", pista: "Es roja." },
   { fruta: "NARANJA", pista: "Su color le da nombre." },
   { fruta: "UVA", pista: "Crece en vides." },
-  { fruta: "ANANA", pista: "Puede ir en la pizza, pero a la gente no le gusta.",},
+  { fruta: "ANANA", pista: "Puede ir en la pizza, pero a la gente no le gusta." },
   { fruta: "BANANA", pista: "Tiene mucho potasio." },
-  { fruta: "FRUTILLA", pista: "Existe una serie infantil con su nombre en diminutivo.", },
-  { fruta: "KIWI", pista: "Tambien es el nombre de un pajaro incapaz de volar.", },
-  { fruta: "TOMATE", pista: "Se la usa en las ensaladas, por lo que se piensa que es una verdura.",},
+  { fruta: "FRUTILLA", pista: "Existe una serie infantil con su nombre en diminutivo." },
+  { fruta: "KIWI", pista: "Tambien es el nombre de un pajaro incapaz de volar." },
+  { fruta: "TOMATE", pista: "Se la usa en las ensaladas, por lo que se piensa que es una verdura." },
   { fruta: "ARANDANO", pista: "Es un fruto del bosque." },
   { fruta: "CEREZA", pista: "Un sabor de helado común, pero no es vainilla." },
   { fruta: "FRAMBRUESA", pista: "Es roja, empieza con F y termina con A." },
@@ -20,10 +20,10 @@ const palabras = [
   { fruta: "MELON", pista: "Cuando hace calor se lo parte y rellena con vino." },
   { fruta: "DURAZNO", pista: "Tiene una gran y única semilla y suele ser usado para licuados." },
   { fruta: "CABALLO", pista: "Esto no es una fruta ¿Qué hace aquí? Bueno... Montar a ..." },
-]; //diccionario
+]//diccionario
 
 export default function Hangman() {
-  const [word, setWord] = useState(" "); // palabra que va a aparecer
+  const [word, setWord] = useState("a"); // palabra que va a aparecer
   const [pista, setPista] = useState("");
 
   const alphabets = [
@@ -104,7 +104,7 @@ export default function Hangman() {
               <button
                 key={index}
                 onClick={() => {
-                  if (wrongLetter < 6 && maskedWord.includes("_")) {
+                  if (wrongLetter < 6 && maskedWord.includes("_") && !word.includes("a")) {
                     // el if indica que las teclas serán detectadas solo en caso de que este dentro del margen de intentos y que la palabra no este completa, si los intentos fallidos llegan a 6 ya no las detectará y terminará el juego
                     if (word.includes(alphabet)) {
                       setCorrectGuesses([...correctGuesses, alphabet]);

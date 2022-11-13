@@ -19,7 +19,7 @@ export class Menu extends Phaser.Scene{
 
 
       preload(){
-        this.load.image('menu','./imagenes/fondo.jpg');
+        this.load.image('menu','./imagenes/fondoarkanoid.jpg');
         this.load.image('arkanoid','./imagenes/arkanoid.png');
         this.LvlunoButton.preload();                                   // Se precarga las imagenes y los botones.
         this.LvlNormal.preload();                   

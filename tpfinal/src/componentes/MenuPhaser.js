@@ -8,7 +8,7 @@ function MenuPhaser() {
     <Fragment>
       {juegosphaser.map((juegophaser) => {
         return (
-          <div className="caja">
+          <div className="caja" key = {juegophaser.id}>
             <div className="cajajuego">
               <div className="portadajuego">
                 <img
