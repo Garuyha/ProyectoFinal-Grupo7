@@ -1,0 +1,8 @@
+Todas las bibliotecas usadas en el proyecto
+
+■ CREAR PROYECTO REACT :   npx create-react-app my-app cd my-app npm start    
+■ CREAR LIBRERIAS REACTS :  npm init -y npm install react npm install react dom   
+■ INSTALAR REACT ROUTER DOM :  npm install react-router-dom   
+■ INSTALAR PHASER:  npm install phaser@3.55.2
+■ HOWLER: npm install howler (para los audios)
+
