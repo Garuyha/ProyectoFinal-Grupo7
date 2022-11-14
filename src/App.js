@@ -4,10 +4,10 @@ import Inicio from "./componentes/Inicio";
 import MenuPhaser from "./componentes/MenuPhaser";
 import MenuReact from "./componentes/MenuReact";
 import Desarrollador from "./componentes/Desarrollador";
-import Arkanoid from "./componentes/juegos/Arkanoid/Arkanoid";
+import Arkanoid from "./componentes/juegos/arkanoid/Arkanoid";
 import HungryAnt from './componentes/juegos/snakeIvan/HungryAntGame'
 import JuegoDude from "./componentes/juegos/dude/DudeJuego";
-import Juego from "./componentes/juegos/PiedraPapelTijera/Juego";
+import Juego from "./componentes/juegos/piedraPapelTijera/Juego";
 import Hangman from "./componentes/juegos/hangmanFuncion/Hangman";
 import MemoriaApp from "./componentes/juegos/memoriaEzequiel/MemoriaApp";
 import Error from "./componentes/Error";
