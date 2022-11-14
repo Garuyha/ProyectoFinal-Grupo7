@@ -112,10 +112,10 @@ export default function App(){
         <div className = "App">
             <h1>TAROT MAGICO</h1>
             <h1>                                
-                {turnos <= 0 ? "Has perdido, precione el boton jugar para empezar de nuevo" : "Intentos: "+ turnos}
+                {turnos <= 0 ? "Has perdido, presione el boton jugar para empezar de nuevo" : "Intentos: "+ turnos}
             </h1>
             <h1>
-                {aciertos <= 0 ? "Has ganado, precione el boton jugar para empezar de nuevo": ""}
+                {aciertos <= 0 ? "Has ganado, presione el boton jugar para empezar de nuevo": ""}
             </h1>
             <button onClick={mezclarCartas}>Jugar</button> 
 
